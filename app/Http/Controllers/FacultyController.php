@@ -57,9 +57,12 @@ class FacultyController extends Controller
      * @param  \App\Faculty  $faculty
      * @return \Illuminate\Http\Response
      */
-    public function show(Faculty $faculty)
+    public function show($id)
     {
         //
+        $faculty =  Faculty::findOrfail($id);
+
+        return view('faculty.show', compact('faculty'));
     }
 
     /**

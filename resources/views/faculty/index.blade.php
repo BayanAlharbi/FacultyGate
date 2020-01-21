@@ -26,7 +26,7 @@
             @foreach($faculties as $faculty)
             <tr>
                 <td>{{$faculty->id}}</td>
-                <td>{{$faculty->english_name}}</td>
+                <td><a href="{{ route('faculty.show',$faculty->id)}}" title="{{$faculty->english_name}}"> {{$faculty->english_name}}</a></td>
                 <td>{{$faculty->badge}}</td>
                 <td>{{$faculty->academic_rank}}</td>
                 <td>{{$faculty->admin_position}}</td>
