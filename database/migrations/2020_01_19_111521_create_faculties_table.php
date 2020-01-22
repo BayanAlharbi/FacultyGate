@@ -17,7 +17,7 @@ class CreateFacultiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('arabic_name');
             $table->string('english_name');
-            $table->integer('badge');
+            $table->integer('badge')->unsigned()->change();
             $table->string('academic_rank');
             $table->string('admin_position');
             $table->date('joining_date')->nullable();

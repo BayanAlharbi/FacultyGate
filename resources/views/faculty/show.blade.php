@@ -31,6 +31,20 @@
                             <dd class="col-sm-9"> {!!$faculty->promotion_date !!}</dd>
                             <dt class="col-sm-3">Last Working Date:</dt>
                             <dd class="col-sm-9"> {!!$faculty->last_working_date !!}</dd>
+                            <div class="border-top my-3"></div>
+                            <dt class="col-sm-3">Cell Phone:</dt>
+                            <dd class="col-sm-9"> {!!$faculty->ContactInfo->cell_phone !!}</dd>
+                            <dt class="col-sm-3">Pager Number:</dt>
+                            <dd class="col-sm-9"> {!!$faculty->ContactInfo->pager_number !!}</dd>
+                            <dt class="col-sm-3">Extension:</dt>
+                            <dd class="col-sm-9"> {!!$faculty->ContactInfo->extension !!}</dd>
+                            <dt class="col-sm-3">NGHA Email:</dt>
+                            <dd class="col-sm-9"> {!!$faculty->ContactInfo->ngha_email !!}</dd>
+                            <dt class="col-sm-3">KSAU-HS Email:</dt>
+                            <dd class="col-sm-9"> {!!$faculty->ContactInfo->ksauhs_email !!}</dd>
+                            <dt class="col-sm-3">Personal Email:</dt>
+                            <dd class="col-sm-9"> {!!$faculty->ContactInfo->personal_email !!}</dd>
+
 
                         </dl>
                     </div>
