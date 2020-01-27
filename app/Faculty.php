@@ -14,4 +14,12 @@ class Faculty extends Model
     {
         return $this->hasOne('App\ContactInfo', 'faculty_badge', 'badge');
     }
+    public function DemographicInfo()
+    {
+        return $this->hasOne('App\DemographicInfo', 'faculty_badge', 'badge');
+    }
+    public function EducationalBackground()
+    {
+        return $this->hasMany('App\EducationalBackground', 'faculty_badge', 'badge');
+    }
 }

@@ -54,6 +54,119 @@
                                 </div>
                             </div>
                         </fieldset>
+                        <!-- demographic Info  -->
+                        <div class="border-top my-3"></div>
+                        <fieldset>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="nationality">{{ __('Nationality') }}</label>
+                                    <!-- <input id="nationality" class="form-control" type="text" name="nationality" value="{{ old('nationality') }}"> -->
+                                    <select value="selected" selected name="nationality" class="js-example-basic-multiple">
+                                        <option value="american" {{ $faculty->DemographicInfo->nationality == 'american' ? 'selected' : '' }}>American</option>
+                                        <option value="andorran" {{ $faculty->DemographicInfo->nationality == 'andorran' ? 'selected' : '' }}>Andorran</option>
+                                        <option value="angolan" {{ $faculty->DemographicInfo->nationality == 'angolan' ? 'selected' : '' }}>Angolan</option>
+                                        <option value="antiguans" {{ $faculty->DemographicInfo->nationality == 'antiguans' ? 'selected' : '' }}>Antiguans</option>
+                                        <option value="argentinean" {{ $faculty->DemographicInfo->nationality == 'argentinean' ? 'selected' : '' }}>Argentinean</option>
+                                        <option value="armenian" {{ $faculty->DemographicInfo->nationality == 'armenian' ? 'selected' : '' }}>Armenian</option>
+                                        <option value="australian" {{ $faculty->DemographicInfo->nationality == 'australian' ? 'selected' : '' }}>Australian</option>
+                                        <option value="austrian" {{ $faculty->DemographicInfo->nationality == 'austrian' ? 'selected' : '' }}>Austrian</option>
+                                        <option value="azerbaijani" {{ $faculty->DemographicInfo->nationality == 'azerbaijani' ? 'selected' : '' }}>Azerbaijani</option>
+                                        <option value="bahamian" {{ $faculty->DemographicInfo->nationality == 'bahamian' ? 'selected' : '' }}>Bahamian</option>
+                                        <option value="bahraini" {{ $faculty->DemographicInfo->nationality == 'bahraini' ? 'selected' : '' }}>Bahraini</option>
+                                        <option value="bangladeshi">Bangladeshi</option>
+                                        <option value="british">British</option>
+                                        <option value="canadian">Canadian</option>
+                                        <option value="cape verdean">Cape Verdean</option>
+                                        <option value="central african">Central African</option>
+                                        <option value="chadian">Chadian</option>
+                                        <option value="chinese">Chinese</option>
+                                        <option value="ecuadorean">Ecuadorean</option>
+                                        <option value="egyptian">Egyptian</option>
+                                        <option value="equatorial guinean">Equatorial Guinean</option>
+                                        <option value="eritrean">Eritrean</option>
+                                        <option value="estonian">Estonian</option>
+                                        <option value="ethiopian">Ethiopian</option>
+                                        <option value="filipino">Filipino</option>
+                                        <option value="french">French</option>
+                                        <option value="georgian">Georgian</option>
+                                        <option value="german">German</option>
+                                        <option value="ghanaian">Ghanaian</option>
+                                        <option value="greek">Greek</option>
+                                        <option value="indian">Indian</option>
+                                        <option value="indonesian">Indonesian</option>
+                                        <option value="iraqi">Iraqi</option>
+                                        <option value="irish">Irish</option>
+                                        <option value="italian">Italian</option>
+                                        <option value="japanese">Japanese</option>
+                                        <option value="jordanian">Jordanian</option>
+                                        <option value="kenyan">Kenyan</option>
+                                        <option value="lebanese">Lebanese</option>
+                                        <option value="libyan">Libyan</option>
+                                        <option value="malaysian">Malaysian</option>
+                                        <option value="mauritian">Mauritian</option>
+                                        <option value="mexican">Mexican</option>
+                                        <option value="moroccan">Moroccan</option>
+                                        <option value="new zealander">New Zealander</option>
+                                        <option value="nigerien">Nigerien</option>
+                                        <option value="north korean">North Korean</option>
+                                        <option value="omani">Omani</option>
+                                        <option value="pakistani">Pakistani</option>n>
+                                        <option value="polish">Polish</option>
+                                        <option value="portuguese">Portuguese</option>
+                                        <option value="qatari">Qatari</option>
+                                        <option value="romanian">Romanian</option>
+                                        <option value="russian">Russian</option>
+                                        <option value="rwandan">Rwandan</option>
+                                        <option value="saint lucian">Saint Lucian</option>
+                                        <option value="salvadoran">Salvadoran</option>
+                                        <option value="saudi" {{ $faculty->DemographicInfo->nationality == 'saudi' ? 'selected' : '' }}>Saudi</option>
+                                        <option value="scottish" {{ $faculty->DemographicInfo->nationality  == 'Scottish' ? 'selected' : '' }}>Scottish</option>
+                                        <option value="singaporean">Singaporean</option>
+                                        <option value="somali">Somali</option>
+                                        <option value="south african">South African</option>
+                                        <option value="south korean">South Korean</option>
+                                        <option value="spanish">Spanish</option>
+                                        <option value="sudanese">Sudanese</option>
+                                        <option value="swedish">Swedish</option>
+                                        <option value="thai">Thai</option>
+                                        <option value="tunisian">Tunisian</option>
+                                        <option value="turkish">Turkish</option>
+                                        <option value="tuvaluan">Tuvaluan</option>
+                                        <option value="ugandan">Ugandan</option>
+                                        <option value="ukrainian">Ukrainian</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="national_id">{{ __('National Id') }}</label>
+                                    <input id="national_id" class="form-control" type="text" name="national_id" placeholder="1111111111" value="{!!$faculty->DemographicInfo->national_id !!}">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label value="checked" for="gender">{{ __('Gender') }}</label> <br>
+                                    <input type="radio" name="gender" value="Male" {{ $faculty->DemographicInfo->gender == 'Male' ? 'checked' : '' }}>Male
+                                    <input type="radio" name="gender" value="Female" {{ $faculty->DemographicInfo->gender == 'Female' ? 'checked' : ''}}> Female
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="marital_status">{{ __('Marital Status') }}</label> <br>
+                                    <!-- <input id="nationality" class="form-control" type="text" name="nationality" value="{{ old('nationality') }}"> -->
+                                    <select value="selected" name="marital_status" class="js-example-basic-multiple">
+                                        <option value="married" {{ $faculty->DemographicInfo->marital_status  == 'married' ? 'selected' : '' }}>married</option>
+                                        <option value="single" {{ $faculty->DemographicInfo->marital_status  == 'single' ? 'selected' : '' }}>single</option>
+                                        <option value="divorced" {{ $faculty->DemographicInfo->marital_status == 'divorced' ? 'selected' : '' }}>divorced</option>
+                                        <option value="separated" {{ ($faculty->DemographicInfo->marital_status == 'separated') ? 'selected' : '' }}>separated</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="date_of_birth">{{ __('Date of Birth') }}</label>
+                                    <input id="date_of_birth" class="form-control" type="date" name="date_of_birth" placeholder="dd/mm/yyyy" value="{!!$faculty->DemographicInfo->date_of_birth !!}">
+                                </div>
+
+                            </div>
+                        </fieldset>
+                        <!-- contact information -->
                         <div class="border-top my-3"></div>
                         <fieldset>
                             <div class="form-row">

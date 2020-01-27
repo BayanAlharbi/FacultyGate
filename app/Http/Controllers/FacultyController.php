@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Faculty;
 use App\ContactInfo;
+use App\DemographicInfo;
 use CreateContactInfoTable;
 use Illuminate\Http\Request;
 
@@ -50,6 +51,15 @@ class FacultyController extends Controller
         $faculty->joining_date = $request->joining_date;
         $faculty->promotion_date = $request->promotion_date;
         $faculty->save();
+
+        $demographicInfo = new DemographicInfo();
+        $demographicInfo->faculty_badge = $request->badge;
+        $demographicInfo->nationality = $request->nationality;
+        $demographicInfo->national_id = $request->national_id;
+        $demographicInfo->gender = $request->gender;
+        $demographicInfo->marital_status = $request->marital_status;
+        $demographicInfo->date_of_birth = $request->date_of_birth;
+        $demographicInfo->save();
 
         $contact = new ContactInfo();
         $contact->faculty_badge = $request->badge;
@@ -115,7 +125,14 @@ class FacultyController extends Controller
         $faculty->ContactInfo->ngha_email = $request->ngha_email;
         $faculty->ContactInfo->ksauhs_email = $request->ksauhs_email;
         $faculty->ContactInfo->personal_email = $request->personal_email;
+        $faculty->DemographicInfo->nationality = $request->nationality;
+        $faculty->DemographicInfo->national_id = $request->national_id;
+        $faculty->DemographicInfo->gender = $request->gender;
+        $faculty->DemographicInfo->marital_status = $request->marital_status;
+        $faculty->DemographicInfo->date_of_birth = $request->date_of_birth;
+        $faculty->save();
         $faculty->ContactInfo->save();
+        $faculty->DemographicInfo->save();
         return redirect('/faculty')->with('success', 'faculty has been updated');
     }
 

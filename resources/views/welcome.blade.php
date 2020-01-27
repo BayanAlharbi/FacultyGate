@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>FacultyGate</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -39,6 +39,12 @@
         .top-right {
             position: absolute;
             right: 10px;
+            top: 18px;
+        }
+
+        .top-left {
+            position: absolute;
+            left: 10px;
             top: 18px;
         }
 
@@ -79,6 +85,9 @@
             <a href="{{ route('register') }}">Register</a>
             @endif
             @endauth
+
+        </div>
+        <div class="top-left links">
             <a href="{{ url('/faculty/create') }}">Faculty</a>
         </div>
         @endif
@@ -87,17 +96,6 @@
         <div class="content">
             <div class="title m-b-md">
                 FacultyGate
-            </div>
-
-            <div class="links">
-                <a href="https://laravel.com/docs">Docs</a>
-                <a href="https://laracasts.com">Laracasts</a>
-                <a href="https://laravel-news.com">News</a>
-                <a href="https://blog.laravel.com">Blog</a>
-                <a href="https://nova.laravel.com">Nova</a>
-                <a href="https://forge.laravel.com">Forge</a>
-                <a href="https://vapor.laravel.com">Vapor</a>
-                <a href="https://github.com/laravel/laravel">GitHub</a>
             </div>
         </div>
     </div>
