@@ -13,14 +13,14 @@ class CreateEducationalBackgroundTable extends Migration
      */
     public function up()
     {
-        Schema::create('education_background', function (Blueprint $table) {
+        Schema::create('educational_background', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('faculty_badge')->unsigned()->index();
             $table->string('major_field');
             $table->string('subspecialty_field');
             $table->string('degree_name')->nullable();
             $table->string('graduate_institution')->nullable();
-            $table->date('year')->nullable();
+            $table->integer('year', 4)->change();
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

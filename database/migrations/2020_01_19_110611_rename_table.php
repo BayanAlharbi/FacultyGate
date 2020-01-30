@@ -14,7 +14,7 @@ class RenameTable extends Migration
     public function up()
     {
         //
-
+        Schema::rename('education_background', 'educational_background');
     }
 
     /**
@@ -25,6 +25,6 @@ class RenameTable extends Migration
     public function down()
     {
         //
-
+        Schema::rename('education_background', 'educational_background');
     }
 }

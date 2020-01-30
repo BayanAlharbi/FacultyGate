@@ -6,6 +6,7 @@ use App\Faculty;
 use App\ContactInfo;
 use App\DemographicInfo;
 use CreateContactInfoTable;
+use App\EducationalBackground;
 use Illuminate\Http\Request;
 
 class FacultyController extends Controller
@@ -70,6 +71,14 @@ class FacultyController extends Controller
         $contact->ksauhs_email = $request->ksauhs_email;
         $contact->personal_email = $request->personal_email;
         $contact->save();
+
+        $education = new EducationalBackground();
+        $education->major_field = $request->majorField;
+        $education->subspecialty_field = $request->subspecialtyField;
+        $education->degree_name = $request->degreeName;
+        $education->graduate_institution = $request->graduateInstitution;
+        $education->year = $request->year;
+        $education->save();
 
         return redirect('/faculty')->with('success', 'faculty has been added');
     }
