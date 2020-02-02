@@ -20,7 +20,7 @@ class CreateEducationalBackgroundTable extends Migration
             $table->string('subspecialty_field');
             $table->string('degree_name')->nullable();
             $table->string('graduate_institution')->nullable();
-            $table->integer('year', 4)->change();
+            // $table->integer('year', 4)->unsigned()->nullable();
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
@@ -34,6 +34,6 @@ class CreateEducationalBackgroundTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('education_background');
+        Schema::dropIfExists('educational_background');
     }
 }

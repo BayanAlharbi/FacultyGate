@@ -326,7 +326,7 @@
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="year">{{ __('Graduated Year') }}</label>
-                                        <input id="year" class="form-control" type="email" name="year" placeholder="2012" value="{{ old('year') }}">
+                                        <input id="year" class="form-control" type="number" name="year" placeholder="2012" value="{{ old('year') }}">
                                     </div>
                                 </div>
                             </fieldset>

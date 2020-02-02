@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFacultyBadgeToContactInfoTable extends Migration
+class AddYearToTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddFacultyBadgeToContactInfoTable extends Migration
      */
     public function up()
     {
-        Schema::table('contact_info', function (Blueprint $table) {
+        Schema::table('educational_background', function (Blueprint $table) {
             //
-            $table->integer('faculty_badge')->unsigned()->after('id')->index()->change();
+            $table->year('year')->after('graduate_institution');
         });
     }
 
@@ -26,8 +26,9 @@ class AddFacultyBadgeToContactInfoTable extends Migration
      */
     public function down()
     {
-        Schema::table('contact_info', function (Blueprint $table) {
+        Schema::table('educational_background', function (Blueprint $table) {
             //
+            $table->year('year')->after('graduate_institution');
         });
     }
 }

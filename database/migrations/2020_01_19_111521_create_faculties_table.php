@@ -14,10 +14,10 @@ class CreateFacultiesTable extends Migration
     public function up()
     {
         Schema::create('faculties', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->autoIncrement();
             $table->string('arabic_name');
             $table->string('english_name');
-            $table->integer('badge')->unsigned()->change();
+            $table->integer('badge')->unsigned();
             $table->string('academic_rank');
             $table->string('admin_position');
             $table->date('joining_date')->nullable();

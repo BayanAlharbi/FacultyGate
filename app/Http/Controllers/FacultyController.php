@@ -73,6 +73,7 @@ class FacultyController extends Controller
         $contact->save();
 
         $education = new EducationalBackground();
+        $education->faculty_badge = $request->badge;
         $education->major_field = $request->majorField;
         $education->subspecialty_field = $request->subspecialtyField;
         $education->degree_name = $request->degreeName;
@@ -93,7 +94,7 @@ class FacultyController extends Controller
     {
         //
         $faculty =  Faculty::findOrfail($id);
-
+        // return $faculty->EducationalBackground;
         return view('faculty.show', compact('faculty'));
     }
 
@@ -128,20 +129,32 @@ class FacultyController extends Controller
         $faculty->admin_position = $request->admin_position;
         $faculty->joining_date = $request->joining_date;
         $faculty->promotion_date = $request->promotion_date;
+        //contact info 
         $faculty->ContactInfo->cell_phone = $request->cell_phone;
         $faculty->ContactInfo->pager_number = $request->pager_number;
         $faculty->ContactInfo->extension = $request->extension;
         $faculty->ContactInfo->ngha_email = $request->ngha_email;
         $faculty->ContactInfo->ksauhs_email = $request->ksauhs_email;
         $faculty->ContactInfo->personal_email = $request->personal_email;
+        //demographic info
         $faculty->DemographicInfo->nationality = $request->nationality;
         $faculty->DemographicInfo->national_id = $request->national_id;
         $faculty->DemographicInfo->gender = $request->gender;
         $faculty->DemographicInfo->marital_status = $request->marital_status;
         $faculty->DemographicInfo->date_of_birth = $request->date_of_birth;
+        //educational background 
+        foreach ($faculty->EducationalBackground as $edu) {
+            $edu->major_field = $request->majorField;
+            $edu->subspecialty_field = $request->subspecialtyField;
+            $edu->degree_name = $request->degreeName;
+            $edu->graduate_institution = $request->graduateInstitution;
+            $edu->year = $request->year;
+            $edu->save();
+        }
         $faculty->save();
         $faculty->ContactInfo->save();
         $faculty->DemographicInfo->save();
+
         return redirect('/faculty')->with('success', 'faculty has been updated');
     }
 

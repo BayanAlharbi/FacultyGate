@@ -15,6 +15,7 @@ class CreateContactInfoTable extends Migration
     {
         Schema::create('contact_info', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('faculty_badge')->unsigned()->index();
             $table->string('cell_phone');
             $table->integer('pager_number');
             $table->integer('extension');

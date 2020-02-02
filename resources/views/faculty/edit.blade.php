@@ -198,6 +198,35 @@
                                 </div>
                             </div>
                         </fieldset>
+                        <div class="border-top my-3"></div>
+                        <fieldset>
+                            @foreach($faculty->EducationalBackground as $edu)
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="major_field">{{ __('Major Field') }}</label>
+                                    <input id="majorField" class="form-control" type="text" name="majorField" value="{{ $edu->major_field }}">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="subspecialtyField">{{ __('Subspecialty Field') }}</label>
+                                    <input id="subspecialtyField" class="form-control" type="text" name="subspecialtyField" value="{{ $edu->subspecialty_field}}">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="subspecialtyField">{{ __('Degree Name') }}</label>
+                                    <input id="subspecialtyField" class="form-control" type="text" name="subspecialtyField" value="{{ $edu->degree_name }}">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="graduateInstitution">{{ __('Graduated Institution') }}</label>
+                                    <input id="graduateInstitution" class="form-control" type="text" name="graduateInstitution" value="{{ $edu->graduate_institution }}">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="year">{{ __('Graduated Year') }}</label>
+                                    <input id="year" class="form-control" type="number" name="year" value="{{  $edu->year }}">
+                                </div>
+                            </div>
+                            @endforeach
+                        </fieldset>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -205,11 +234,12 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
                 </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
 <!-- <div class="form-group">
