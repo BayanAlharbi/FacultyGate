@@ -304,44 +304,38 @@
                             <!-- Demographic Info -->
                             <div class="border-top my-3"></div>
                             <fieldset>
-                                <div id="dynamic_field">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="majorField">{{ __('Major Field') }}</label>
-                                            <input id="majorField" class="form-control" type="text" name="majorField[]" value="{{ old('major_field') }}">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="subspecialtyField">{{ __('Subspecialty Field') }}</label>
-                                            <input id="subspecialtyField" class="form-control" type="text" name="subspecialtyField[]" value="{{ old('subspecialty_field') }}">
-                                        </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="majorField">{{ __('Major Field') }}</label>
+                                        <input id="majorField" class="form-control" type="text" name="majorField" value="{{ old('major_field') }}">
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <label for="degreeName">{{ __('Degree Name') }}</label>
-                                            <input id="degreeName" type="text" class="form-control" name="degreeName[]" value="{{ old('degree_name') }}">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="graduateInstitution">{{ __('Graduate Institution') }}</label>
-                                            <input id="graduateInstitution" class="form-control" type="text" name="graduateInstitution[]" placeholder="King Saud bin Abdulaziz for Heath Sciences" value="{{ old('ngha_email') }}">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="year">{{ __('Graduated Year') }}</label>
-                                            <input id="year" class="form-control" type="number" name="year[]" placeholder="2012" value="{{ old('year') }}">
-                                        </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="subspecialtyField">{{ __('Subspecialty Field') }}</label>
+                                        <input id="subspecialtyField" class="form-control" type="text" name="subspecialtyField" value="{{ old('subspecialty_field') }}">
                                     </div>
-                                    <button type="button" name="add" id="add" class="btn btn-success">Add More</button>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="degreeName">{{ __('Degree Name') }}</label>
+                                        <input id="degreeName" type="text" class="form-control" name="degreeName" value="{{ old('degree_name') }}">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="graduateInstitution">{{ __('Graduate Institution') }}</label>
+                                        <input id="graduateInstitution" class="form-control" type="text" name="graduateInstitution" placeholder="King Saud bin Abdulaziz for Heath Sciences" value="{{ old('ngha_email') }}">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="year">{{ __('Graduated Year') }}</label>
+                                        <input id="year" class="form-control" type="number" name="year" placeholder="2012" value="{{ old('year') }}">
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">ADD</button>
+
+                            </fieldset>
+
+                        </form>
                 </div>
-
-                </fieldset>
-
             </div>
-
-            </form>
         </div>
     </div>
-</div>
-</div>
 </div>
 @endsection

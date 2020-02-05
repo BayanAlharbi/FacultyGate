@@ -73,67 +73,67 @@
                                         <option value="azerbaijani" {{ $faculty->DemographicInfo->nationality == 'azerbaijani' ? 'selected' : '' }}>Azerbaijani</option>
                                         <option value="bahamian" {{ $faculty->DemographicInfo->nationality == 'bahamian' ? 'selected' : '' }}>Bahamian</option>
                                         <option value="bahraini" {{ $faculty->DemographicInfo->nationality == 'bahraini' ? 'selected' : '' }}>Bahraini</option>
-                                        <option value="bangladeshi">Bangladeshi</option>
-                                        <option value="british">British</option>
-                                        <option value="canadian">Canadian</option>
-                                        <option value="cape verdean">Cape Verdean</option>
-                                        <option value="central african">Central African</option>
-                                        <option value="chadian">Chadian</option>
-                                        <option value="chinese">Chinese</option>
-                                        <option value="ecuadorean">Ecuadorean</option>
-                                        <option value="egyptian">Egyptian</option>
-                                        <option value="equatorial guinean">Equatorial Guinean</option>
-                                        <option value="eritrean">Eritrean</option>
-                                        <option value="estonian">Estonian</option>
-                                        <option value="ethiopian">Ethiopian</option>
-                                        <option value="filipino">Filipino</option>
-                                        <option value="french">French</option>
-                                        <option value="georgian">Georgian</option>
-                                        <option value="german">German</option>
-                                        <option value="ghanaian">Ghanaian</option>
-                                        <option value="greek">Greek</option>
-                                        <option value="indian">Indian</option>
-                                        <option value="indonesian">Indonesian</option>
-                                        <option value="iraqi">Iraqi</option>
-                                        <option value="irish">Irish</option>
-                                        <option value="italian">Italian</option>
-                                        <option value="japanese">Japanese</option>
-                                        <option value="jordanian">Jordanian</option>
-                                        <option value="kenyan">Kenyan</option>
-                                        <option value="lebanese">Lebanese</option>
-                                        <option value="libyan">Libyan</option>
-                                        <option value="malaysian">Malaysian</option>
-                                        <option value="mauritian">Mauritian</option>
-                                        <option value="mexican">Mexican</option>
-                                        <option value="moroccan">Moroccan</option>
-                                        <option value="new zealander">New Zealander</option>
-                                        <option value="nigerien">Nigerien</option>
-                                        <option value="north korean">North Korean</option>
-                                        <option value="omani">Omani</option>
-                                        <option value="pakistani">Pakistani</option>n>
-                                        <option value="polish">Polish</option>
-                                        <option value="portuguese">Portuguese</option>
-                                        <option value="qatari">Qatari</option>
-                                        <option value="romanian">Romanian</option>
-                                        <option value="russian">Russian</option>
-                                        <option value="rwandan">Rwandan</option>
-                                        <option value="saint lucian">Saint Lucian</option>
-                                        <option value="salvadoran">Salvadoran</option>
+                                        <option value="bangladeshi" {{ $faculty->DemographicInfo->nationality == 'Bangladeshi' ? 'selected' : '' }}>Bangladeshi</option>
+                                        <option value="british" {{ $faculty->DemographicInfo->nationality == 'British' ? 'selected' : '' }}>British</option>
+                                        <option value="canadian" {{ $faculty->DemographicInfo->nationality == 'Canadian' ? 'selected' : '' }}>Canadian</option>
+                                        <option value="cape verdean" {{ $faculty->DemographicInfo->nationality == 'Cape Verdean' ? 'selected' : '' }}>Cape Verdean</option>
+                                        <option value="central african" {{ $faculty->DemographicInfo->nationality == 'Central African' ? 'selected' : '' }}>Central African</option>
+                                        <option value="chadian" {{ $faculty->DemographicInfo->nationality == 'Chadian' ? 'selected' : '' }}>Chadian</option>
+                                        <option value="chinese" {{ $faculty->DemographicInfo->nationality == 'Chinese' ? 'selected' : '' }}>Chinese</option>
+                                        <option value="ecuadorean" {{ $faculty->DemographicInfo->nationality == 'Ecuadorean' ? 'selected' : '' }}>Ecuadorean</option>
+                                        <option value="egyptian" {{ $faculty->DemographicInfo->nationality == 'Egyptian' ? 'selected' : '' }}>Egyptian</option>
+                                        <option value="equatorial guinean" {{ $faculty->DemographicInfo->nationality == 'Equatorial Guinean' ? 'selected' : '' }}>Equatorial Guinean</option>
+                                        <option value="eritrean" {{ $faculty->DemographicInfo->nationality == 'Eritrean' ? 'selected' : '' }}>Eritrean</option>
+                                        <option value="estonian" {{ $faculty->DemographicInfo->nationality == 'Estonian' ? 'selected' : '' }}>Estonian</option>
+                                        <option value="ethiopian" {{ $faculty->DemographicInfo->nationality == 'Ethiopian' ? 'selected' : '' }}>Ethiopian</option>
+                                        <option value="filipino" {{ $faculty->DemographicInfo->nationality == 'Filipino' ? 'selected' : '' }}>Filipino</option>
+                                        <option value="french" {{ $faculty->DemographicInfo->nationality == 'French' ? 'selected' : '' }}>French</option>
+                                        <option value="georgian" {{ $faculty->DemographicInfo->nationality == 'Georgian' ? 'selected' : '' }}>Georgian</option>
+                                        <option value="german" {{ $faculty->DemographicInfo->nationality == 'German' ? 'selected' : '' }}>German</option>
+                                        <option value="ghanaian" {{ $faculty->DemographicInfo->nationality == 'Ghanaian' ? 'selected' : '' }}>Ghanaian</option>
+                                        <option value="greek" {{ $faculty->DemographicInfo->nationality == 'Greek' ? 'selected' : '' }}>Greek</option>
+                                        <option value="indian" {{ $faculty->DemographicInfo->nationality == 'Indian' ? 'selected' : '' }}>Indian</option>
+                                        <option value="indonesian" {{ $faculty->DemographicInfo->nationality == 'Indonesian' ? 'selected' : '' }}>Indonesian</option>
+                                        <option value="iraqi" {{ $faculty->DemographicInfo->nationality == 'Iraqi' ? 'selected' : '' }}>Iraqi</option>
+                                        <option value="irish" {{ $faculty->DemographicInfo->nationality == 'Irish' ? 'selected' : '' }}>Irish</option>
+                                        <option value="italian" {{ $faculty->DemographicInfo->nationality == 'Italian' ? 'selected' : '' }}>Italian</option>
+                                        <option value="japanese" {{ $faculty->DemographicInfo->nationality == 'Japanese' ? 'selected' : '' }}>Japanese</option>
+                                        <option value="jordanian" {{ $faculty->DemographicInfo->nationality == 'Jordanian' ? 'selected' : '' }}>Jordanian</option>
+                                        <option value="kenyan" {{ $faculty->DemographicInfo->nationality == 'Kenyan' ? 'selected' : '' }}>Kenyan</option>
+                                        <option value="lebanese" {{ $faculty->DemographicInfo->nationality == 'Lebanese' ? 'selected' : '' }}>Lebanese</option>
+                                        <option value="libyan" {{ $faculty->DemographicInfo->nationality == 'Libyan' ? 'selected' : '' }}>Libyan</option>
+                                        <option value="malaysian" {{ $faculty->DemographicInfo->nationality == 'Malaysian' ? 'selected' : '' }}>Malaysian</option>
+                                        <option value="mauritian" {{ $faculty->DemographicInfo->nationality == 'Mauritian' ? 'selected' : '' }}>Mauritian</option>
+                                        <option value="mexican" {{ $faculty->DemographicInfo->nationality == 'Mexican' ? 'selected' : '' }}>Mexican</option>
+                                        <option value="moroccan" {{ $faculty->DemographicInfo->nationality == 'Moroccan' ? 'selected' : '' }}>Moroccan</option>
+                                        <option value="new zealander" {{ $faculty->DemographicInfo->nationality == 'New Zealander' ? 'selected' : '' }}>New Zealander</option>
+                                        <option value="nigerien" {{ $faculty->DemographicInfo->nationality == 'Nigerien' ? 'selected' : '' }}>Nigerien</option>
+                                        <option value="north korean" {{ $faculty->DemographicInfo->nationality == 'North Korean' ? 'selected' : '' }}>North Korean</option>
+                                        <option value="omani" {{ $faculty->DemographicInfo->nationality == 'Omani' ? 'selected' : '' }}>Omani</option>
+                                        <option value="pakistani" {{ $faculty->DemographicInfo->nationality == 'Pakistani' ? 'selected' : '' }}>Pakistani</option>n>
+                                        <option value="polish" {{ $faculty->DemographicInfo->nationality == 'Polish' ? 'selected' : '' }}>Polish</option>
+                                        <option value="portuguese" {{ $faculty->DemographicInfo->nationality == 'Portuguese' ? 'selected' : '' }}>Portuguese</option>
+                                        <option value="qatari" {{ $faculty->DemographicInfo->nationality == 'Qatari' ? 'selected' : '' }}>Qatari</option>
+                                        <option value="romanian" {{ $faculty->DemographicInfo->nationality == 'Romanian' ? 'selected' : '' }}>Romanian</option>
+                                        <option value="russian" {{ $faculty->DemographicInfo->nationality == 'Russian' ? 'selected' : '' }}>Russian</option>
+                                        <option value="rwandan" {{ $faculty->DemographicInfo->nationality == 'Rwandan' ? 'selected' : '' }}>Rwandan</option>
+                                        <option value="saint lucian" {{ $faculty->DemographicInfo->nationality == 'Saint Lucian' ? 'selected' : '' }}>Saint Lucian</option>
+                                        <option value="salvadoran" {{ $faculty->DemographicInfo->nationality == 'Salvadoran' ? 'selected' : '' }}>Salvadoran</option>
                                         <option value="saudi" {{ $faculty->DemographicInfo->nationality == 'saudi' ? 'selected' : '' }}>Saudi</option>
                                         <option value="scottish" {{ $faculty->DemographicInfo->nationality  == 'Scottish' ? 'selected' : '' }}>Scottish</option>
-                                        <option value="singaporean">Singaporean</option>
-                                        <option value="somali">Somali</option>
-                                        <option value="south african">South African</option>
-                                        <option value="south korean">South Korean</option>
-                                        <option value="spanish">Spanish</option>
-                                        <option value="sudanese">Sudanese</option>
-                                        <option value="swedish">Swedish</option>
-                                        <option value="thai">Thai</option>
-                                        <option value="tunisian">Tunisian</option>
-                                        <option value="turkish">Turkish</option>
-                                        <option value="tuvaluan">Tuvaluan</option>
-                                        <option value="ugandan">Ugandan</option>
-                                        <option value="ukrainian">Ukrainian</option>
+                                        <option value="singaporean" {{ $faculty->DemographicInfo->nationality == 'Singaporean' ? 'selected' : '' }}>Singaporean</option>
+                                        <option value="somali" {{ $faculty->DemographicInfo->nationality == 'Somali' ? 'selected' : '' }}>Somali</option>
+                                        <option value="south african" {{ $faculty->DemographicInfo->nationality == 'South African' ? 'selected' : '' }}>South African</option>
+                                        <option value="south korean" {{ $faculty->DemographicInfo->nationality == 'South Korean<' ? 'selected' : '' }}>South Korean</option>
+                                        <option value="spanish" {{ $faculty->DemographicInfo->nationality == 'Spanish' ? 'selected' : '' }}>Spanish</option>
+                                        <option value="sudanese" {{ $faculty->DemographicInfo->nationality == 'Sudanese' ? 'selected' : '' }}>Sudanese</option>
+                                        <option value="swedish" {{ $faculty->DemographicInfo->nationality == 'Swedish' ? 'selected' : '' }}>Swedish</option>
+                                        <option value="thai" {{ $faculty->DemographicInfo->nationality == 'Thai' ? 'selected' : '' }}>Thai</option>
+                                        <option value="tunisian" {{ $faculty->DemographicInfo->nationality == 'Tunisian' ? 'selected' : '' }}>Tunisian</option>
+                                        <option value="turkish" {{ $faculty->DemographicInfo->nationality == 'Turkish' ? 'selected' : '' }}>Turkish</option>
+                                        <option value="tuvaluan" {{ $faculty->DemographicInfo->nationality == 'Tuvaluan' ? 'selected' : '' }}>Tuvaluan</option>
+                                        <option value="ugandan" {{ $faculty->DemographicInfo->nationality == 'Ugandan' ? 'selected' : '' }}>Ugandan</option>
+                                        <option value="ukrainian" {{ $faculty->DemographicInfo->nationality == 'Ukrainian' ? 'selected' : '' }}>Ukrainian</option>
 
                                     </select>
                                 </div>

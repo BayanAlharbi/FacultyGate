@@ -54,45 +54,45 @@ class FacultyController extends Controller
         $faculty->promotion_date = $request->promotionDate;
         $faculty->save();
 
-        //$demographicInfo = new DemographicInfo();
-        $faculty->DemographicInfo->faculty_badge = $request->badge;
-        $faculty->DemographicInfo->nationality = $request->nationality;
-        $faculty->DemographicInfo->national_id = $request->nationalId;
-        $faculty->DemographicInfo->gender = $request->gender;
-        $faculty->DemographicInfo->marital_status = $request->maritalStatus;
-        $faculty->DemographicInfo->date_of_birth = $request->dateOfBirth;
-        $faculty->DemographicInfo->save();
+        $demographicInfo = new DemographicInfo();
+        $demographicInfo->faculty_id = $faculty->id;
+        $demographicInfo->nationality = $request->nationality;
+        $demographicInfo->national_id = $request->nationalId;
+        $demographicInfo->gender = $request->gender;
+        $demographicInfo->marital_status = $request->maritalStatus;
+        $demographicInfo->date_of_birth = $request->dateOfBirth;
+        $demographicInfo->save();
 
-        // $contact = new ContactInfo();
-        $faculty->ContactInfo->faculty_badge = $request->badge;
-        $faculty->ContactInfo->cell_phone = $request->cellPhone;
-        $faculty->ContactInfo->pager_number = $request->pagerNumber;
-        $faculty->ContactInfo->extension = $request->extension;
-        $faculty->ContactInfo->ngha_email = $request->nghaEmail;
-        $faculty->ContactInfo->ksauhs_email = $request->ksauhsEmail;
-        $faculty->ContactInfo->personal_email = $request->personalEmail;
-        $faculty->ContactInfo->save();
+        $contact = new ContactInfo();
+        $contact->faculty_id = $faculty->id;
+        $contact->cell_phone = $request->cellPhone;
+        $contact->pager_number = $request->pagerNumber;
+        $contact->extension = $request->extension;
+        $contact->ngha_email = $request->nghaEmail;
+        $contact->ksauhs_email = $request->ksauhsEmail;
+        $contact->personal_email = $request->personalEmail;
+        $contact->save();
 
         //  $education = new EducationalBackground();
-        $input = Input::all();
-        $condition = $input['name'];
-        foreach ($condition as $key => $condition) {
-            $education = new EducationalBackground();
-            $education->faculty_badge = $input['badge'][$key];
-            $education->subspecialty_field = $input['subspecialty_field'][$key];
-            $education->degree_name = $input['degree_name'][$key];
-            $education->graduate_institution = $input['graduate_institution'][$key];
-            $education->year = $input['year'][$key];
-            $education->save();
-        }
-        // $education = new EducationalBackground();
-        // $education->faculty_badge = $request->badge;
-        // $education->major_field = $request->majorField;
-        // $education->subspecialty_field = $request->subspecialtyField;
-        // $education->degree_name = $request->degreeName;
-        // $education->graduate_institution = $request->graduateInstitution;
-        // $education->year = $request->year;
-        // $education->save();
+        // $input = Input::all();
+        // $condition = $input['name'];
+        // foreach ($condition as $key => $condition) {
+        //     $education = new EducationalBackground();
+        //     $education->faculty_badge = $input['badge'][$key];
+        //     $education->subspecialty_field = $input['subspecialty_field'][$key];
+        //     $education->degree_name = $input['degree_name'][$key];
+        //     $education->graduate_institution = $input['graduate_institution'][$key];
+        //     $education->year = $input['year'][$key];
+        //     $education->save();
+        // }
+        $education = new EducationalBackground();
+        $education->faculty_id = $faculty->id;
+        $education->major_field = $request->majorField;
+        $education->subspecialty_field = $request->subspecialtyField;
+        $education->degree_name = $request->degreeName;
+        $education->graduate_institution = $request->graduateInstitution;
+        $education->year = $request->year;
+        $education->save();
 
         return redirect('/faculty')->with('success', 'faculty has been added');
     }

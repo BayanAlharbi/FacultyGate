@@ -12,14 +12,14 @@ class Faculty extends Model
 
     public function ContactInfo()
     {
-        return $this->hasOne('App\ContactInfo', 'faculty_badge', 'badge');
+        return $this->hasOne('App\ContactInfo', 'faculty_id', 'id');
     }
     public function DemographicInfo()
     {
-        return $this->hasOne('App\DemographicInfo', 'faculty_badge', 'badge');
+        return $this->hasOne('App\DemographicInfo', 'faculty_id', 'id');
     }
     public function EducationalBackground()
     {
-        return $this->hasMany('App\EducationalBackground', 'faculty_badge', 'badge');
+        return $this->hasMany('App\EducationalBackground', 'faculty_id', 'id');
     }
 }

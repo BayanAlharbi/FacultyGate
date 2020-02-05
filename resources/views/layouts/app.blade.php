@@ -98,7 +98,7 @@
 </body>
 
 </html>
-<script>
+<!-- <script>
     $(document).ready(function() {
         var i = 1;
         $('#add').click(function() {
@@ -121,4 +121,4 @@
             });
         });
     });
-</script>
+</script> -->
