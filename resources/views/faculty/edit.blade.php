@@ -17,12 +17,12 @@
                         <fieldset>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="english_name">{{ ('English Name:') }}</label>
-                                    <input type="text" class="form-control" name="english_name" value="{{ $faculty->english_name }}" />
+                                    <label for="englishName">{{ ('English Name:') }}</label>
+                                    <input type="text" class="form-control" name="englishName" value="{{ $faculty->english_name }}" />
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="arabic_name">{{ ('Arabic Name:') }}</label>
-                                    <input type="text" class="form-control" name="arabic_name" value="{{ $faculty->arabic_name }}" />
+                                    <label for="arabicName">{{ ('Arabic Name:') }}</label>
+                                    <input type="text" class="form-control" name="arabicName" value="{{ $faculty->arabic_name }}" />
                                 </div>
                             </div>
                             <div class="form-row">
@@ -31,26 +31,26 @@
                                     <input id="badge" class="form-control" type="text" name="badge" value="{{ $faculty->badge }}">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="academic_rank">{{ __('Academic Rank') }}</label>
-                                    <input type="text" class="form-control" name="academic_rank" value="{{ $faculty->academic_rank }}" />
+                                    <label for="academicRank">{{ __('Academic Rank') }}</label>
+                                    <input type="text" class="form-control" name="academicRank" value="{{ $faculty->academic_rank }}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="admin_position">{{ __('Admin Position') }}</label>
-                                    <input type="text" class="form-control" name="admin_position" value="{{ $faculty->admin_position }}" />
+                                    <label for="adminPosition">{{ __('Admin Position') }}</label>
+                                    <input type="text" class="form-control" name="adminPosition" value="{{ $faculty->admin_position }}" />
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="joining_date">{{ __('Joining Date') }}</label>
-                                    <input type="date" class="form-control" name="joining_date" value="{{ $faculty->joining_date }}" />
+                                    <label for="joiningDate">{{ __('Joining Date') }}</label>
+                                    <input type="date" class="form-control" name="joiningDate" value="{{ $faculty->joining_date }}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="promotion_date">{{ __('Promotion Date') }}</label>
-                                    <input type="date" class="form-control" name="promotion_date" value="{{ $faculty->promotion_date }}" />
+                                    <label for="promotionDate">{{ __('Promotion Date') }}</label>
+                                    <input type="date" class="form-control" name="promotionDate" value="{{ $faculty->promotion_date }}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="last_working_date">{{ __('Last Working Date') }}</label>
-                                    <input type="date" class="form-control" name="last_working_date" value="{{ $faculty->last_working_date }}" />
+                                    <label for="lastWorkingDate">{{ __('Last Working Date') }}</label>
+                                    <input type="date" class="form-control" name="lastWorkingDate" value="{{ $faculty->last_working_date }}" />
                                 </div>
                             </div>
                         </fieldset>
@@ -138,8 +138,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="national_id">{{ __('National Id') }}</label>
-                                    <input id="national_id" class="form-control" type="text" name="national_id" placeholder="1111111111" value="{!!$faculty->DemographicInfo->national_id !!}">
+                                    <label for="nationalId">{{ __('National Id') }}</label>
+                                    <input id="nationalId" class="form-control" type="text" name="nationalId" placeholder="1111111111" value="{!!$faculty->DemographicInfo->national_id !!}">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label value="checked" for="gender">{{ __('Gender') }}</label> <br>
@@ -149,9 +149,9 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="marital_status">{{ __('Marital Status') }}</label> <br>
+                                    <label for="maritalStatus">{{ __('Marital Status') }}</label> <br>
                                     <!-- <input id="nationality" class="form-control" type="text" name="nationality" value="{{ old('nationality') }}"> -->
-                                    <select value="selected" name="marital_status" class="js-example-basic-multiple">
+                                    <select value="selected" name="maritalStatus" class="js-example-basic-multiple">
                                         <option value="married" {{ $faculty->DemographicInfo->marital_status  == 'married' ? 'selected' : '' }}>married</option>
                                         <option value="single" {{ $faculty->DemographicInfo->marital_status  == 'single' ? 'selected' : '' }}>single</option>
                                         <option value="divorced" {{ $faculty->DemographicInfo->marital_status == 'divorced' ? 'selected' : '' }}>divorced</option>
@@ -160,8 +160,8 @@
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <label for="date_of_birth">{{ __('Date of Birth') }}</label>
-                                    <input id="date_of_birth" class="form-control" type="date" name="date_of_birth" placeholder="dd/mm/yyyy" value="{!!$faculty->DemographicInfo->date_of_birth !!}">
+                                    <label for="dateOfBirth">{{ __('Date of Birth') }}</label>
+                                    <input id="dateOfBirth" class="form-control" type="date" name="dateOfBirth" placeholder="dd/mm/yyyy" value="{!!$faculty->DemographicInfo->date_of_birth !!}">
                                 </div>
 
                             </div>
@@ -171,12 +171,12 @@
                         <fieldset>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="cell_phone">{{ __('Cell Phone') }}</label>
-                                    <input type="number" class="form-control" name="cell_phone" value="{!!$faculty->ContactInfo->cell_phone !!}" />
+                                    <label for="cellPhone">{{ __('Cell Phone') }}</label>
+                                    <input type="number" class="form-control" name="cellPhone" value="{!!$faculty->ContactInfo->cell_phone !!}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="pager_number">{{ __('Pager Number') }}</label>
-                                    <input type="number" class="form-control" name="pager_number" value="{{ $faculty->ContactInfo->pager_number }}">
+                                    <label for="pagerNumber">{{ __('Pager Number') }}</label>
+                                    <input type="number" class="form-control" name="pagerNumber" value="{{ $faculty->ContactInfo->pager_number }}">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="extension">{{ __('extension') }}</label>
@@ -186,15 +186,15 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="ngha_email">{{ __('NGHA Email') }}</label>
-                                    <input type="email" class="form-control" name="ngha_email" value="{{ $faculty->ContactInfo->ngha_email }}" />
+                                    <input type="email" class="form-control" name="nghaEmail" value="{{ $faculty->ContactInfo->ngha_email }}" />
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="ksauhs_email">{{ __('KSAU-HS Email') }}</label>
-                                    <input type="email" class="form-control" name="ksauhs_email" value="{{ $faculty->ContactInfo->ksauhs_email }}" />
+                                    <input type="email" class="form-control" name="ksauhsEmail" value="{{ $faculty->ContactInfo->ksauhs_email }}" />
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="personal_email">{{ __('Personal Email') }}</label>
-                                    <input type="email" class="form-control" name="personal_email" value="{{ $faculty->ContactInfo->personal_email }}" />
+                                    <input type="email" class="form-control" name="personalEmail" value="{{ $faculty->ContactInfo->personal_email }}" />
                                 </div>
                             </div>
                         </fieldset>
@@ -203,7 +203,7 @@
                             @foreach($faculty->EducationalBackground as $edu)
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="major_field">{{ __('Major Field') }}</label>
+                                    <label for="majorField">{{ __('Major Field') }}</label>
                                     <input id="majorField" class="form-control" type="text" name="majorField" value="{{ $edu->major_field }}">
                                 </div>
                                 <div class="form-group col-md-6">

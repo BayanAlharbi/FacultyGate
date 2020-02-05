@@ -12,6 +12,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="/path/to/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,6 +23,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/isia-form-repeater.min.css">
 </head>
 
 <body>
@@ -93,3 +98,27 @@
 </body>
 
 </html>
+<script>
+    $(document).ready(function() {
+        var i = 1;
+        $('#add').click(function() {
+            i++;
+            $('#dynamic_field').append('<div id="row' + i + '" id="dynamic_field"> <div class= "form-row"><div class = "form-group col-md-6"><label for = "majorField" > {{__("Major Field")}}</label><input id = "majorField"class = "form-control"type = "text" name="majorField[]"></div> <div class = "form-group col-md-6" ><label for = "subspecialtyField" > {{__("Subspecialty Field")}}</label> <input id = "subspecialtyField"class = "form-control"type = "text"  name="subspecialtyField[]" value = "{{ old("subspecialty_field") }}" ></div> </div> <div class = "form-row" ><div class = "form-group col-md-4" ><label for = "degreeName" > {{ __("Degree Name")}}</label> <input id = "degreeName"type = "text"class = "form-control" name="degreeName[]" ></div> <div class = "form-group col-md-4" ><label for = "graduateInstitution" > {{__("Graduate Institution")}} </label> <input id = "graduateInstitution"class = "form-control"type = "text" name="graduateInstitution[]"  placeholder = "King Saud bin Abdulaziz for Heath Sciences"></div> <div class = "form-group col-md-4" ><label for = "year" > {{__("Graduated Year" ) }} </label><input id = "year"class = "form-control"type = "number"name = "year[]"placeholder = "2012"></div> </div><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">Remove</button > ');
+        });
+        $(document).on('click', '.btn_remove', function() {
+            var button_id = $(this).attr("id");
+            $('#row' + button_id + '').remove();
+        });
+        $('#submit').click(function() {
+            $.ajax({
+                url: "faculty.store",
+                method: "POST",
+                data: $('#dynamic_field').serialize(),
+                success: function(data) {
+                    alert(data);
+                    $('#dynamic_field')[0].reset();
+                }
+            });
+        });
+    });
+</script>

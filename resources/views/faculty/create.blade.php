@@ -3,7 +3,6 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-
         <div class="col-md-8">
             <div class="card">
                 <!-- @if(session()->get('success'))
@@ -15,16 +14,16 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('faculty.store') }}">
                         @csrf
-                        <form>
+                        <form name="add_faculty" id="add_faculty">
                             <fieldset>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="En_name">{{ ('English Name') }}</label>
-                                        <input id="En_name" class="form-control" type="text" name="En_name" value="{{ old('name') }}" placeholder="english full name" required autocomplete="name" autofocus>
+                                        <label for="englishName">{{ ('English Name') }}</label>
+                                        <input id="englishName" class="form-control" type="text" name="englishName" placeholder="english full name" required autocomplete="name" autofocus>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="Ar_name">{{ ('Arabic Name') }}</label>
-                                        <input id="Ar_name" class="form-control" type="text" name="Ar_name" value="{{ old('name') }}" placeholder="arabic full name" required autocomplete="name" autofocus>
+                                        <label for="arabicName">{{ ('Arabic Name') }}</label>
+                                        <input id="arabicName" class="form-control" type="text" name="arabicName" placeholder="arabic full name" required autocomplete="name" autofocus>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -33,26 +32,26 @@
                                         <input id="badge" class="form-control" type="text" name="badge" value="{{ old('badge') }}">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="academic_rank">{{ __('Academic Rank') }}</label>
-                                        <input id="academic_rank" class="form-control" type="text" name="academic_rank" value="{{ old('academic_rank') }}">
+                                        <label for="academicRrank">{{ __('Academic Rank') }}</label>
+                                        <input id="academicRank" class="form-control" type="text" name="academicRank" value="{{ old('academic_rank') }}">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="admin_position">{{ __('Admin Position') }}</label>
-                                        <input id="admin_position" type="text" class="form-control" name="admin_position" value="{{ old('admin_position') }}">
+                                        <label for="adminPosition">{{ __('Admin Position') }}</label>
+                                        <input id="adminPosition" type="text" class="form-control" name="adminPosition" value="{{ old('admin_position') }}">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
-                                        <label for="joining_date">{{ __('Joining Date') }}</label>
-                                        <input id="joining_date" class="form-control" type="date" name="joining_date" placeholder="dd/mm/yyyy" value="{{ old('joining_date') }}">
+                                        <label for="joiningDate">{{ __('Joining Date') }}</label>
+                                        <input id="joiningDate" class="form-control" type="date" name="joiningDate" placeholder="dd/mm/yyyy" value="{{ old('joining_date') }}">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="promotion_date">{{ __('Promotion Date') }}</label>
-                                        <input id="promotion_date" class="form-control" type="date" name="promotion_date" placeholder="dd/mm/yyyy" value="{{ old('promotion_date') }}">
+                                        <label for="promotionDate">{{ __('Promotion Date') }}</label>
+                                        <input id="promotionDate" class="form-control" type="date" name="promotionDate" placeholder="dd/mm/yyyy" value="{{ old('promotion_date') }}">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="last_working_date">{{ __('Last Working Date') }}</label>
-                                        <input id="last_working_date" type="date" class="form-control" name="last_working_date" value="{{ old('last_working_date') }}">
+                                        <label for="lastWorkingDate">{{ __('Last Working Date') }}</label>
+                                        <input id="lastWorkingDate" type="date" class="form-control" name="lastWorkingDate" value="{{ old('last_working_date') }}">
                                     </div>
                                 </div>
                             </fieldset>
@@ -243,8 +242,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="national_id">{{ __('National Id') }}</label>
-                                        <input id="national_id" class="form-control" type="text" name="national_id" placeholder="1111111111" value="{{ old('national_id') }}">
+                                        <label for="nationalId">{{ __('National Id') }}</label>
+                                        <input id="nationalId" class="form-control" type="text" name="nationalId" placeholder="1111111111" value="{{ old('national_id') }}">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="gender">{{ __('Gender') }}</label> <br>
@@ -254,9 +253,9 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="marital_status">{{ __('Marital Status') }}</label> <br>
+                                        <label for="maritalStatus">{{ __('Marital Status') }}</label> <br>
                                         <!-- <input id="nationality" class="form-control" type="text" name="nationality" value="{{ old('nationality') }}"> -->
-                                        <select name="marital_status" class="js-example-basic-multiple">
+                                        <select name="maritalStatus" class="js-example-basic-multiple">
                                             <option value="married">married</option>
                                             <option value="single">single</option>
                                             <option value="divorced">divorced</option>
@@ -264,8 +263,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="date_of_birth">{{ __('Date of Birth') }}</label>
-                                        <input id="date_of_birth" class="form-control" type="date" name="date_of_birth" placeholder="dd/mm/yyyy" value="{{ old('date_of_birth') }}">
+                                        <label for="dateOfBirth">{{ __('Date of Birth') }}</label>
+                                        <input id="dateOfBirth" class="form-control" type="date" name="dateOfBirth" placeholder="dd/mm/yyyy" value="{{ old('dateOfBirth') }}">
                                     </div>
 
                                 </div>
@@ -275,12 +274,12 @@
                             <fieldset>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
-                                        <label for="cell_phone">{{ __('Cell Phone') }}</label>
-                                        <input id="cell_phone" class="form-control" type="text" name="cell_phone" placeholder="+966-55-555-5555" value="{{ old('cell_phone') }}">
+                                        <label for="cellPhone">{{ __('Cell Phone') }}</label>
+                                        <input id="cellPhone" class="form-control" type="text" name="cellPhone" placeholder="+966-55-555-5555" value="{{ old('cell_phone') }}">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="pager_number">{{ __('Pager Number') }}</label>
-                                        <input id="pager_number" class="form-control" type="text" name="pager_number" placeholder="123456" value="{{ old('pager_number') }}">
+                                        <label for="pagerNumber">{{ __('Pager Number') }}</label>
+                                        <input id="pagerNumber" class="form-control" type="text" name="pagerNumber" placeholder="123456" value="{{ old('pager_number') }}">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="extension">{{ __('extension') }}</label>
@@ -289,53 +288,60 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
-                                        <label for="ngha_email">{{ __('NGHA Email') }}</label>
-                                        <input id="ngha_email" class="form-control" type="email" name="ngha_email" placeholder="example@ngha.med.sa" value="{{ old('ngha_email') }}">
+                                        <label for="nghaEmail">{{ __('NGHA Email') }}</label>
+                                        <input id="nghaEmail" class="form-control" type="email" name="nghaEmail" placeholder="example@ngha.med.sa" value="{{ old('ngha_email') }}">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="ksauhs_email">{{ __('KSAU-HS Email') }}</label>
-                                        <input id="ksauhs_email" class="form-control" type="email" name="ksauhs_email" placeholder="example@ksau-hs.edu.sa" value="{{ old('ksauhs_email') }}">
+                                        <label for="ksauhsEmail">{{ __('KSAU-HS Email') }}</label>
+                                        <input id="ksauhsEmail" class="form-control" type="email" name="ksauhsEmail" placeholder="example@ksau-hs.edu.sa" value="{{ old('ksauhs_email') }}">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="personal_email">{{ __('Personal Email') }}</label>
-                                        <input id="personal_email" type="email" class="form-control" name="personal_email" value="{{ old('personal_email') }}">
+                                        <label for="personalEmail">{{ __('Personal Email') }}</label>
+                                        <input id="personalEmail" type="email" class="form-control" name="personalEmail" value="{{ old('personal_email') }}">
                                     </div>
                                 </div>
                             </fieldset>
                             <!-- Demographic Info -->
                             <div class="border-top my-3"></div>
                             <fieldset>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="majorField">{{ __('Major Field') }}</label>
-                                        <input id="majorField" class="form-control" type="text" name="majorField" value="{{ old('major_field') }}">
+                                <div id="dynamic_field">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="majorField">{{ __('Major Field') }}</label>
+                                            <input id="majorField" class="form-control" type="text" name="majorField[]" value="{{ old('major_field') }}">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="subspecialtyField">{{ __('Subspecialty Field') }}</label>
+                                            <input id="subspecialtyField" class="form-control" type="text" name="subspecialtyField[]" value="{{ old('subspecialty_field') }}">
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="subspecialtyField">{{ __('Subspecialty Field') }}</label>
-                                        <input id="subspecialtyField" class="form-control" type="text" name="subspecialtyField" value="{{ old('subspecialty_field') }}">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="degreeName">{{ __('Degree Name') }}</label>
+                                            <input id="degreeName" type="text" class="form-control" name="degreeName[]" value="{{ old('degree_name') }}">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="graduateInstitution">{{ __('Graduate Institution') }}</label>
+                                            <input id="graduateInstitution" class="form-control" type="text" name="graduateInstitution[]" placeholder="King Saud bin Abdulaziz for Heath Sciences" value="{{ old('ngha_email') }}">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="year">{{ __('Graduated Year') }}</label>
+                                            <input id="year" class="form-control" type="number" name="year[]" placeholder="2012" value="{{ old('year') }}">
+                                        </div>
                                     </div>
+                                    <button type="button" name="add" id="add" class="btn btn-success">Add More</button>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="degreeName">{{ __('Degree Name') }}</label>
-                                        <input id="degreeName" type="text" class="form-control" name="degreeName" value="{{ old('degree_name') }}">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="graduateInstitution">{{ __('Graduate Institution') }}</label>
-                                        <input id="graduateInstitution" class="form-control" type="text" name="graduateInstitution" placeholder="King Saud bin Abdulaziz for Heath Sciences" value="{{ old('ngha_email') }}">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="year">{{ __('Graduated Year') }}</label>
-                                        <input id="year" class="form-control" type="number" name="year" placeholder="2012" value="{{ old('year') }}">
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <button type="submit" class="btn btn-primary">ADD</button>
-                        </form>
+                                <button type="submit" class="btn btn-primary">ADD</button>
                 </div>
+
+                </fieldset>
+
             </div>
+
+            </form>
         </div>
     </div>
+</div>
 </div>
 </div>
 @endsection

@@ -8,6 +8,7 @@ use App\DemographicInfo;
 use CreateContactInfoTable;
 use App\EducationalBackground;
 use Illuminate\Http\Request;
+use Illuminate\Http\Input;
 
 class FacultyController extends Controller
 {
@@ -44,42 +45,54 @@ class FacultyController extends Controller
     {
         //
         $faculty = new Faculty();
-        $faculty->english_name = $request->En_name;
-        $faculty->arabic_name = $request->Ar_name;
+        $faculty->english_name = $request->englishName;
+        $faculty->arabic_name = $request->arabicName;
         $faculty->badge = $request->badge;
-        $faculty->academic_rank = $request->academic_rank;
-        $faculty->admin_position = $request->admin_position;
-        $faculty->joining_date = $request->joining_date;
-        $faculty->promotion_date = $request->promotion_date;
+        $faculty->academic_rank = $request->academicRank;
+        $faculty->admin_position = $request->adminPosition;
+        $faculty->joining_date = $request->joiningDate;
+        $faculty->promotion_date = $request->promotionDate;
         $faculty->save();
 
-        $demographicInfo = new DemographicInfo();
-        $demographicInfo->faculty_badge = $request->badge;
-        $demographicInfo->nationality = $request->nationality;
-        $demographicInfo->national_id = $request->national_id;
-        $demographicInfo->gender = $request->gender;
-        $demographicInfo->marital_status = $request->marital_status;
-        $demographicInfo->date_of_birth = $request->date_of_birth;
-        $demographicInfo->save();
+        //$demographicInfo = new DemographicInfo();
+        $faculty->DemographicInfo->faculty_badge = $request->badge;
+        $faculty->DemographicInfo->nationality = $request->nationality;
+        $faculty->DemographicInfo->national_id = $request->nationalId;
+        $faculty->DemographicInfo->gender = $request->gender;
+        $faculty->DemographicInfo->marital_status = $request->maritalStatus;
+        $faculty->DemographicInfo->date_of_birth = $request->dateOfBirth;
+        $faculty->DemographicInfo->save();
 
-        $contact = new ContactInfo();
-        $contact->faculty_badge = $request->badge;
-        $contact->cell_phone = $request->cell_phone;
-        $contact->pager_number = $request->pager_number;
-        $contact->extension = $request->extension;
-        $contact->ngha_email = $request->ngha_email;
-        $contact->ksauhs_email = $request->ksauhs_email;
-        $contact->personal_email = $request->personal_email;
-        $contact->save();
+        // $contact = new ContactInfo();
+        $faculty->ContactInfo->faculty_badge = $request->badge;
+        $faculty->ContactInfo->cell_phone = $request->cellPhone;
+        $faculty->ContactInfo->pager_number = $request->pagerNumber;
+        $faculty->ContactInfo->extension = $request->extension;
+        $faculty->ContactInfo->ngha_email = $request->nghaEmail;
+        $faculty->ContactInfo->ksauhs_email = $request->ksauhsEmail;
+        $faculty->ContactInfo->personal_email = $request->personalEmail;
+        $faculty->ContactInfo->save();
 
-        $education = new EducationalBackground();
-        $education->faculty_badge = $request->badge;
-        $education->major_field = $request->majorField;
-        $education->subspecialty_field = $request->subspecialtyField;
-        $education->degree_name = $request->degreeName;
-        $education->graduate_institution = $request->graduateInstitution;
-        $education->year = $request->year;
-        $education->save();
+        //  $education = new EducationalBackground();
+        $input = Input::all();
+        $condition = $input['name'];
+        foreach ($condition as $key => $condition) {
+            $education = new EducationalBackground();
+            $education->faculty_badge = $input['badge'][$key];
+            $education->subspecialty_field = $input['subspecialty_field'][$key];
+            $education->degree_name = $input['degree_name'][$key];
+            $education->graduate_institution = $input['graduate_institution'][$key];
+            $education->year = $input['year'][$key];
+            $education->save();
+        }
+        // $education = new EducationalBackground();
+        // $education->faculty_badge = $request->badge;
+        // $education->major_field = $request->majorField;
+        // $education->subspecialty_field = $request->subspecialtyField;
+        // $education->degree_name = $request->degreeName;
+        // $education->graduate_institution = $request->graduateInstitution;
+        // $education->year = $request->year;
+        // $education->save();
 
         return redirect('/faculty')->with('success', 'faculty has been added');
     }
@@ -122,26 +135,26 @@ class FacultyController extends Controller
     {
         //
         $faculty = Faculty::find($id);
-        $faculty->arabic_name = $request->arabic_name;
-        $faculty->english_name = $request->english_name;
+        $faculty->arabic_name = $request->arabicName;
+        $faculty->english_name = $request->englishName;
         $faculty->badge = $request->badge;
-        $faculty->academic_rank = $request->academic_rank;
-        $faculty->admin_position = $request->admin_position;
-        $faculty->joining_date = $request->joining_date;
-        $faculty->promotion_date = $request->promotion_date;
+        $faculty->academic_rank = $request->academicRank;
+        $faculty->admin_position = $request->adminPosition;
+        $faculty->joining_date = $request->joiningDate;
+        $faculty->promotion_date = $request->promotionDate;
         //contact info 
-        $faculty->ContactInfo->cell_phone = $request->cell_phone;
-        $faculty->ContactInfo->pager_number = $request->pager_number;
+        $faculty->ContactInfo->cell_phone = $request->cellPhone;
+        $faculty->ContactInfo->pager_number = $request->pagerNumber;
         $faculty->ContactInfo->extension = $request->extension;
-        $faculty->ContactInfo->ngha_email = $request->ngha_email;
-        $faculty->ContactInfo->ksauhs_email = $request->ksauhs_email;
-        $faculty->ContactInfo->personal_email = $request->personal_email;
+        $faculty->ContactInfo->ngha_email = $request->nghaEmail;
+        $faculty->ContactInfo->ksauhs_email = $request->ksauhsEmail;
+        $faculty->ContactInfo->personal_email = $request->personalEmail;
         //demographic info
         $faculty->DemographicInfo->nationality = $request->nationality;
-        $faculty->DemographicInfo->national_id = $request->national_id;
+        $faculty->DemographicInfo->national_id = $request->nationalId;
         $faculty->DemographicInfo->gender = $request->gender;
-        $faculty->DemographicInfo->marital_status = $request->marital_status;
-        $faculty->DemographicInfo->date_of_birth = $request->date_of_birth;
+        $faculty->DemographicInfo->marital_status = $request->maritalStatus;
+        $faculty->DemographicInfo->date_of_birth = $request->dateOfBirth;
         //educational background 
         foreach ($faculty->EducationalBackground as $edu) {
             $edu->major_field = $request->majorField;
