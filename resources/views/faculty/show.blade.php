@@ -24,6 +24,8 @@
                         <dd class="col-sm-6">{!!$faculty->academic_rank !!}</dd>
                         <dt class="col-sm-4">Admin Position:</dt>
                         <dd class="col-sm-6"> {!!$faculty->admin_position !!}</dd>
+                        <dt class="col-sm-4">Status:</dt>
+                        <dd class="col-sm-6"> {!!$faculty->status !!}</dd>
                         <dt class="col-sm-4">Joining Date:</dt>
                         <dd class="col-sm-6"> {!!$faculty->joining_date !!}</dd>
                         <dt class="col-sm-4">Promotion Date:</dt>

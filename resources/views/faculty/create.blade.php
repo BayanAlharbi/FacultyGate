@@ -27,17 +27,26 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-3">
                                         <label for="badge">{{ ('Badge') }}</label>
-                                        <input id="badge" class="form-control" type="text" name="badge" value="{{ old('badge') }}">
+                                        <input class="form-inline" id="badge" class="form-control" type="text" name="badge" value="{{ old('badge') }}">
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-3">
                                         <label for="academicRrank">{{ __('Academic Rank') }}</label>
-                                        <input id="academicRank" class="form-control" type="text" name="academicRank" value="{{ old('academic_rank') }}">
+                                        <input class="form-inline" id="academicRank" class="form-control" type="text" name="academicRank" value="{{ old('academic_rank') }}">
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-3">
                                         <label for="adminPosition">{{ __('Admin Position') }}</label>
-                                        <input id="adminPosition" type="text" class="form-control" name="adminPosition" value="{{ old('admin_position') }}">
+                                        <input class="form-inline" id="adminPosition" type="text" class="form-control" name="adminPosition" value="{{ old('admin_position') }}">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="status">{{ __('Status') }}</label>
+                                        <select class="form-inline" class="btn-primary dropdown-toggle" name="status" class="js-example-basic-multiple">
+                                            <option class="dropdown-item" value="active">Active</option>
+                                            <option class="dropdown-item" value="retried">Retried</option>
+                                            <option class="dropdown-item" value="resigned">Resigned</option>
+                                            <option class="dropdown-item" value="transfer">Transfer</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -59,10 +68,20 @@
                             <div class="border-top my-3"></div>
                             <fieldset>
                                 <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="nationalId">{{ __('National Id') }}</label>
+                                        <input id="nationalId" class="form-inline" class="form-control" type="text" name="nationalId" placeholder="1111111111" value="{{ old('national_id') }}">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="dateOfBirth">{{ __('Date of Birth') }}</label>
+                                        <input class="form-inline" id="dateOfBirth" class="form-control" type="date" name="dateOfBirth" placeholder="dd/mm/yyyy" value="{{ old('dateOfBirth') }}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="nationality">{{ __('Nationality') }}</label>
                                         <!-- <input id="nationality" class="form-control" type="text" name="nationality" value="{{ old('nationality') }}"> -->
-                                        <select name="nationality" class="js-example-basic-multiple">
+                                        <select class="form-inline" name="nationality" class="js-example-basic-multiple">
                                             <option value="american">American</option>
                                             <option value="andorran">Andorran</option>
                                             <option value="angolan">Angolan</option>
@@ -242,29 +261,25 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="nationalId">{{ __('National Id') }}</label>
-                                        <input id="nationalId" class="form-control" type="text" name="nationalId" placeholder="1111111111" value="{{ old('national_id') }}">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="gender">{{ __('Gender') }}</label> <br>
-                                        <input type="radio" name="gender" value="male" checked>Male
-                                        <input type="radio" name="gender" value="female"> Female
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
                                         <label for="maritalStatus">{{ __('Marital Status') }}</label> <br>
                                         <!-- <input id="nationality" class="form-control" type="text" name="nationality" value="{{ old('nationality') }}"> -->
-                                        <select name="maritalStatus" class="js-example-basic-multiple">
+                                        <select class="form-inline" name="maritalStatus" class="js-example-basic-multiple">
                                             <option value="married">married</option>
                                             <option value="single">single</option>
                                             <option value="divorced">divorced</option>
                                             <option value="separated">separated</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="dateOfBirth">{{ __('Date of Birth') }}</label>
-                                        <input id="dateOfBirth" class="form-control" type="date" name="dateOfBirth" placeholder="dd/mm/yyyy" value="{{ old('dateOfBirth') }}">
+                                    <div class="form-group col-md-4 ">
+                                        <label for="gender">{{ __('Gender') }}</label> <br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" value="male">
+                                            <label class="form-check-label" for="gender">Male</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" value="female">
+                                            <label class="form-check-label" for="gender">Female</label>
+                                        </div>
                                     </div>
 
                                 </div>

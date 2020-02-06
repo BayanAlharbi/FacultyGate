@@ -26,17 +26,26 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="badge">{{ ('Badge') }}</label>
                                     <input id="badge" class="form-control" type="text" name="badge" value="{{ $faculty->badge }}">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="academicRank">{{ __('Academic Rank') }}</label>
                                     <input type="text" class="form-control" name="academicRank" value="{{ $faculty->academic_rank }}" />
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="adminPosition">{{ __('Admin Position') }}</label>
                                     <input type="text" class="form-control" name="adminPosition" value="{{ $faculty->admin_position }}" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="status">{{ __('Status') }}</label>
+                                    <select class="form-inline" class="btn-primary dropdown-toggle" name="status" class="js-example-basic-multiple">
+                                        <option class="dropdown-item" value="active" {{ $faculty->status  == 'active' ? 'selected' : '' }}>Active</option>
+                                        <option class="dropdown-item" value="retried" {{ $faculty->status  == 'retried' ? 'selected' : '' }}>Retried</option>
+                                        <option class="dropdown-item" value="resigned" {{ $faculty->status  == 'resigned' ? 'selected' : '' }}>Resigned</option>
+                                        <option class="dropdown-item" value="transfer" {{ $faculty->status  == 'transfer' ? 'selected' : '' }}>Transfer</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-row">

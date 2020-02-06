@@ -50,6 +50,7 @@ class FacultyController extends Controller
         $faculty->badge = $request->badge;
         $faculty->academic_rank = $request->academicRank;
         $faculty->admin_position = $request->adminPosition;
+        $faculty->status = $request->status;
         $faculty->joining_date = $request->joiningDate;
         $faculty->promotion_date = $request->promotionDate;
         $faculty->save();
@@ -140,6 +141,7 @@ class FacultyController extends Controller
         $faculty->badge = $request->badge;
         $faculty->academic_rank = $request->academicRank;
         $faculty->admin_position = $request->adminPosition;
+        $faculty->status = $request->status;
         $faculty->joining_date = $request->joiningDate;
         $faculty->promotion_date = $request->promotionDate;
         //contact info 
