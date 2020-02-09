@@ -26,6 +26,12 @@
                         <dd class="col-sm-6"> {!!$faculty->admin_position !!}</dd>
                         <dt class="col-sm-4">Status:</dt>
                         <dd class="col-sm-6"> {!!$faculty->status !!}</dd>
+                        <dt class="col-sm-4">Full-Time:</dt>
+                        @if($faculty->full_time==1)
+                        <dd class="col-sm-6">True</dd>
+                        @else
+                        <dd class="col-sm-6">False</dd>
+                        @endif
                         <dt class="col-sm-4">Joining Date:</dt>
                         <dd class="col-sm-6"> {!!$faculty->joining_date !!}</dd>
                         <dt class="col-sm-4">Promotion Date:</dt>

@@ -50,17 +50,24 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-3">
                                         <label for="joiningDate">{{ __('Joining Date') }}</label>
                                         <input id="joiningDate" class="form-control" type="date" name="joiningDate" placeholder="dd/mm/yyyy" value="{{ old('joining_date') }}">
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-3">
                                         <label for="promotionDate">{{ __('Promotion Date') }}</label>
                                         <input id="promotionDate" class="form-control" type="date" name="promotionDate" placeholder="dd/mm/yyyy" value="{{ old('promotion_date') }}">
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-3">
                                         <label for="lastWorkingDate">{{ __('Last Working Date') }}</label>
                                         <input id="lastWorkingDate" type="date" class="form-control" name="lastWorkingDate" value="{{ old('last_working_date') }}">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label>Is faculty full-time?</label>
+                                        <select class="form-control" name="fullTime" id="fullTime">
+                                            <option value="1" @if (old('full_time')==1) selected @endif>True</option>
+                                            <option value="0" @if (old('full_time')==0) selected @endif>False</option>
+                                        </select>
                                     </div>
                                 </div>
                             </fieldset>

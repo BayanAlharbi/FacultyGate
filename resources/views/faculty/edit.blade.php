@@ -49,17 +49,24 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="joiningDate">{{ __('Joining Date') }}</label>
                                     <input type="date" class="form-control" name="joiningDate" value="{{ $faculty->joining_date }}" />
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="promotionDate">{{ __('Promotion Date') }}</label>
                                     <input type="date" class="form-control" name="promotionDate" value="{{ $faculty->promotion_date }}" />
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="lastWorkingDate">{{ __('Last Working Date') }}</label>
                                     <input type="date" class="form-control" name="lastWorkingDate" value="{{ $faculty->last_working_date }}" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Is faculty full-time?</label>
+                                    <select class="form-control" name="fullTime" id="fullTime">
+                                        <option value="1" {{ $faculty->full_time  == '1' ? 'selected' : '' }}>True</option>
+                                        <option value="0" {{ $faculty->full_time  == '0' ? 'selected' : '' }}>False</option>
+                                    </select>
                                 </div>
                             </div>
                         </fieldset>
@@ -68,7 +75,7 @@
                         <fieldset>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="nationality">{{ __('Nationality') }}</label>
+                                    <label for="nationality">{{ __('Nationality') }}</label> <br>
                                     <!-- <input id="nationality" class="form-control" type="text" name="nationality" value="{{ old('nationality') }}"> -->
                                     <select value="selected" selected name="nationality" class="js-example-basic-multiple">
                                         <option value="american" {{ $faculty->DemographicInfo->nationality == 'american' ? 'selected' : '' }}>American</option>
@@ -147,17 +154,6 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="nationalId">{{ __('National Id') }}</label>
-                                    <input id="nationalId" class="form-control" type="text" name="nationalId" placeholder="1111111111" value="{!!$faculty->DemographicInfo->national_id !!}">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label value="checked" for="gender">{{ __('Gender') }}</label> <br>
-                                    <input type="radio" name="gender" value="Male" {{ $faculty->DemographicInfo->gender == 'Male' ? 'checked' : '' }}>Male
-                                    <input type="radio" name="gender" value="Female" {{ $faculty->DemographicInfo->gender == 'Female' ? 'checked' : ''}}> Female
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
                                     <label for="maritalStatus">{{ __('Marital Status') }}</label> <br>
                                     <!-- <input id="nationality" class="form-control" type="text" name="nationality" value="{{ old('nationality') }}"> -->
                                     <select value="selected" name="maritalStatus" class="js-example-basic-multiple">
@@ -167,8 +163,18 @@
                                         <option value="separated" {{ ($faculty->DemographicInfo->marital_status == 'separated') ? 'selected' : '' }}>separated</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group col-md-4">
+                                    <label value="checked" for="gender">{{ __('Gender') }}</label> <br>
+                                    <input type="radio" name="gender" value="Male" {{ $faculty->DemographicInfo->gender == 'Male' ? 'checked' : '' }}>Male
+                                    <input type="radio" name="gender" value="Female" {{ $faculty->DemographicInfo->gender == 'Female' ? 'checked' : ''}}> Female
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="nationalId">{{ __('National Id') }}</label>
+                                    <input id="nationalId" class="form-control" type="text" name="nationalId" placeholder="1111111111" value="{!!$faculty->DemographicInfo->national_id !!}">
+                                </div>
+                                <div class="form-group col-md-6">
                                     <label for="dateOfBirth">{{ __('Date of Birth') }}</label>
                                     <input id="dateOfBirth" class="form-control" type="date" name="dateOfBirth" placeholder="dd/mm/yyyy" value="{!!$faculty->DemographicInfo->date_of_birth !!}">
                                 </div>
