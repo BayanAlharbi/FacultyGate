@@ -7,6 +7,7 @@ use App\ContactInfo;
 use App\DemographicInfo;
 use CreateContactInfoTable;
 use App\EducationalBackground;
+use App\FullTime;
 use Illuminate\Http\Request;
 use Illuminate\Http\Input;
 
@@ -75,18 +76,17 @@ class FacultyController extends Controller
         $contact->personal_email = $request->personalEmail;
         $contact->save();
 
-        //  $education = new EducationalBackground();
-        // $input = Input::all();
-        // $condition = $input['name'];
-        // foreach ($condition as $key => $condition) {
-        //     $education = new EducationalBackground();
-        //     $education->faculty_badge = $input['badge'][$key];
-        //     $education->subspecialty_field = $input['subspecialty_field'][$key];
-        //     $education->degree_name = $input['degree_name'][$key];
-        //     $education->graduate_institution = $input['graduate_institution'][$key];
-        //     $education->year = $input['year'][$key];
-        //     $education->save();
-        // }
+
+        $fulltime = new FullTime();
+        $fulltime->faculty_id = $faculty->id;
+        $fulltime->yearly_appraisal = $request->yearlyAppraisal;
+        $fulltime->business_leave = $request->businessLeave;
+        $fulltime->administrative_duties = $request->administrativeDuties;
+        $fulltime->number_of_invigilator = $request->numberOfInvigilator;
+        $fulltime->total_invigilator_hour = $request->totalInvigilatorHour;
+        $fulltime->committee_membership = $request->committeeMembership;
+        $fulltime->save();
+
         $education = new EducationalBackground();
         $education->faculty_id = $faculty->id;
         $education->major_field = $request->majorField;

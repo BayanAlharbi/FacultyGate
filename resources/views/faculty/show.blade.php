@@ -40,6 +40,26 @@
                         <dd class="col-sm-6"> {!!$faculty->last_working_date !!}</dd>
                     </dl>
                 </div>
+                <!-- full time  -->
+                @if($faculty->full_time =='1')
+                <div class="card-body">
+                    <div class="card-header">{{ __('Full-Time Faculty Details') }}</div>
+                    <dl class="row">
+                        <dt class="col-sm-4">Yearly Appraisal:</dt>
+                        <dd class="col-sm-6"> {!!$faculty->FullTime->yearly_appraisal !!}</dd>
+                        <dt class="col-sm-4">Prof. and Business Leave Attend:</dt>
+                        <dd class="col-sm-6"> {!!$faculty->FullTime->business_leave !!}</dd>
+                        <dt class="col-sm-4">Administrative Duties:</dt>
+                        <dd class="col-sm-6"> {!!$faculty->FullTime->administrative_duties!!}</dd>
+                        <dt class="col-sm-4">Number Of Invigilator:</dt>
+                        <dd class="col-sm-6"> {!!$faculty->FullTime->number_of_invigilator !!}</dd>
+                        <dt class="col-sm-4">Total Invigilator Hour:</dt>
+                        <dd class="col-sm-6"> {!!$faculty->FullTime->total_invigilator_hour !!}</dd>
+                        <dt class="col-sm-4">Committee Membership:</dt>
+                        <dd class="col-sm-6"> {!!$faculty->FullTime->committee_membership!!}</dd>
+                    </dl>
+                </div>
+                @endif
                 <!-- demographic Info -->
                 <div class="card-body">
                     <div class="card-header">{{ __('Demographic Information') }}</div>

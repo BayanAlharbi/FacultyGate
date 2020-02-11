@@ -62,15 +62,57 @@
                                         <label for="lastWorkingDate">{{ __('Last Working Date') }}</label>
                                         <input id="lastWorkingDate" type="date" class="form-control" name="lastWorkingDate" value="{{ old('last_working_date') }}">
                                     </div>
-                                    <div class="form-group col-md-3">
+                                    <!-- <div class="form-group col-md-3">
                                         <label>Is faculty full-time?</label>
                                         <select class="form-control" name="fullTime" id="fullTime">
                                             <option value="1" @if (old('full_time')==1) selected @endif>True</option>
                                             <option value="0" @if (old('full_time')==0) selected @endif>False</option>
                                         </select>
-                                    </div>
+                                    </div> -->
+                                    <div class="form-group col-md-3">
+                                        <label for="fullTime">
+                                            <input type="checkbox" class="form-control" name="fullTime" value="1" id="fullTime" />
+                                            Are you a full-time faculty?
+                                        </label></div>
                                 </div>
                             </fieldset>
+                            <!-- full time faculty details -->
+
+                            <div id="dvPassport" style="display: none">
+                                <div class="border-top my-3"></div>
+                                <fieldset>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="yearlyAppraisal">{{ __('Yearly Appraisal') }}</label>
+                                            <input id="yearlyAppraisal" class="form-control" type="number" name="yearlyAppraisal" placeholder="" value="{{ old('yearly_appraisal') }}">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="businessLeave">{{ __('Professional and Business Leave') }}</label>
+                                            <input id="businessLeave" class="form-control" type="text" name="businessLeave" placeholder="12" value="{{ old('business_leave') }}">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="administrativeDuties">{{ __('Administrative Duties') }}</label>
+                                            <input id="administrativeDuties" type="text" class="form-control" name="administrativeDuties" value="{{ old('administrative_duties') }}">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="numberOfInvigilator">{{ __('Number of Invigilator') }}</label>
+                                            <input id="numberOfInvigilator" class="form-control" type="number" name="numberOfInvigilator" placeholder="" value="{{ old('number_of_invigilator') }}">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="totalInvigilatorHour">{{ __('Total Invigilator Hour') }}</label>
+                                            <input id="totalInvigilatorHour" class="form-control" type="text" name="totalInvigilatorHour" placeholder="12" value="{{ old('total_invigilator_hour') }}">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="committeeMembership">{{ __('Committee Membership') }}</label>
+                                            <input id="committeeMembership" type="text" class="form-control" name="committeeMembership" value="{{ old('committee_membership') }}">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+
                             <!-- demographic Info  -->
                             <div class="border-top my-3"></div>
                             <fieldset>
@@ -361,3 +403,15 @@
     </div>
 </div>
 @endsection
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $("#fullTime").click(function() {
+            if ($(this).is(":checked")) {
+                $("#dvPassport").show();
+            } else {
+                $("#dvPassport").hide();
+            }
+        });
+    });
+</script>

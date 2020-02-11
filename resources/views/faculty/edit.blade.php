@@ -70,6 +70,41 @@
                                 </div>
                             </div>
                         </fieldset>
+                        <!-- full time  -->
+                        @if($faculty->full_time =='1')
+                        <div class="border-top my-3"></div>
+                        <fieldset>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="yearlyAppraisal">{{ __('Yearly Appraisal') }}</label>
+                                    <input type="number" class="form-control" name="yearlyAppraisal" value="{!!$faculty->FullTime->yearly_appraisal !!}" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="businessLeave">{{ __('Prof. and Business Leave Attend') }}</label>
+                                    <input type="number" class="form-control" name="businessLeave" value="{!!$faculty->FullTime->business_leave !!}" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="administrativeDuties">{{ __('Administrative Duties') }}</label>
+                                    <input type="text" class="form-control" name="administrativeDuties" value="{!!$faculty->FullTime->administrative_duties !!}" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="numberOfInvigilator">{{ __('Number Of Invigilator') }}</label>
+                                    <input type="number" class="form-control" name="numberOfInvigilator" value="{!!$faculty->FullTime->number_of_invigilator !!}" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="totalInvigilatorHour">{{ __('Total Invigilator Hour') }}</label>
+                                    <input type="number" class="form-control" name="totalInvigilatorHour" value="{!!$faculty->FullTime->total_invigilator_hour !!}" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="committeeMembership">{{ __('Committee Membership') }}</label>
+                                    <input type="text" class="form-control" name="committeeMembership" value="{!!$faculty->FullTime->committee_membership !!}" />
+                                </div>
+                            </div>
+                        </fieldset>
+                        @endif
+
                         <!-- demographic Info  -->
                         <div class="border-top my-3"></div>
                         <fieldset>

@@ -22,4 +22,8 @@ class Faculty extends Model
     {
         return $this->hasMany('App\EducationalBackground', 'faculty_id', 'id');
     }
+    public function FullTime()
+    {
+        return $this->hasOne('App\FullTime', 'faculty_id', 'id');
+    }
 }
