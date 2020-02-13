@@ -35,14 +35,14 @@ class RenameFacultyBadgeColumn extends Migration
     {
         //
         Schema::table('contact_info', function (Blueprint $table) {
-            $table->renameColumn('faculty_badge', 'faculty_id');
+            $table->renameColumn('faculty_id', 'faculty_badge');
         });
         Schema::table('demographic_info', function (Blueprint $table) {
-            $table->renameColumn('faculty_badge', 'faculty_id');
+            $table->renameColumn('faculty_id', 'faculty_badge');
         });
 
         Schema::table('educational_background', function (Blueprint $table) {
-            $table->renameColumn('faculty_badge', 'faculty_id');
+            $table->renameColumn('faculty_id', 'faculty_badge');
         });
     }
 }

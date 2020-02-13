@@ -28,7 +28,7 @@ class AddYearToTable extends Migration
     {
         Schema::table('educational_background', function (Blueprint $table) {
             //
-            $table->year('year')->after('graduate_institution');
+            $table->dropColumn('year');
         });
     }
 }

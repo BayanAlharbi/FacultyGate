@@ -26,4 +26,8 @@ class Faculty extends Model
     {
         return $this->hasOne('App\FullTime', 'faculty_id', 'id');
     }
+    public function Community()
+    {
+        return $this->hasMany('App\Community', 'faculty_id', 'id');
+    }
 }

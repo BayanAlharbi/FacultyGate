@@ -43,6 +43,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('faculty.store') }}">{{ __('faculty') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('community.store') }}">{{ __('community') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

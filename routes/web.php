@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 Route::resource('faculty', 'FacultyController');
+Route::resource('community', 'CommunityController');
 // Route::post('faculty', 'FacultyController');
 Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/faculty', 'FacultyController@index');
