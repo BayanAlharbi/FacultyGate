@@ -10,12 +10,24 @@
                     {{ session()->get('success') }}
                 </div><br />
                 @endif -->
-                <div class="card-header">{{ __('Faculty Member') }}</div>
-                <div class="card-body">
                     <form method="POST" action="{{ route('faculty.store') }}">
                         @csrf
                         <form name="add_faculty" id="add_faculty">
-                            <fieldset>
+                           
+                <div class="card-header">{{ __('Faculty Member') }}</div>
+                <div class="card-body">
+<!-- faculty basic information  -->
+                    <div id="faq" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="questionOne">
+                        <h5 class="panel-title">
+                        <h5 data-toggle="collapse" data-parent="#faq" href="#answerOne" aria-expanded="false" aria-controls="answerOne">
+                        Basic Information</h5><i class="fas fa-angle-down"></i>
+                        </h5>
+                        </div>
+                        <div id="answerOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="questionOne">
+                        <div class="panel-body">
+                     <fieldset>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="englishName">{{ ('English Name') }}</label>
@@ -62,23 +74,14 @@
                                         <label for="lastWorkingDate">{{ __('Last Working Date') }}</label>
                                         <input id="lastWorkingDate" type="date" class="form-control" name="lastWorkingDate" value="{{ old('last_working_date') }}">
                                     </div>
-                                    <!-- <div class="form-group col-md-3">
-                                        <label>Is faculty full-time?</label>
-                                        <select class="form-control" name="fullTime" id="fullTime">
-                                            <option value="1" @if (old('full_time')==1) selected @endif>True</option>
-                                            <option value="0" @if (old('full_time')==0) selected @endif>False</option>
-                                        </select>
-                                    </div> -->
                                     <div class="form-group col-md-3">
                                         <label for="fullTime">
                                             <input type="checkbox" class="form-control" name="fullTime" value="1" id="fullTime" />
                                             Are you a full-time faculty?
                                         </label></div>
                                 </div>
-                            </fieldset>
-                            <!-- full time faculty details -->
-
-                            <div id="dvPassport" style="display: none">
+<!-- hidden div for full time faculty details -->
+                                     <div id="dvPassport" style="display: none">
                                 <div class="border-top my-3"></div>
                                 <fieldset>
                                     <div class="form-row">
@@ -111,11 +114,22 @@
                                     </div>
                                 </fieldset>
                             </div>
-
-
-                            <!-- demographic Info  -->
-                            <div class="border-top my-3"></div>
-                            <fieldset>
+                            </fieldset>
+                        </div>
+                        </div>
+                     </div>
+                        <div class="border-top my-3"></div>
+<!-- demographic Info  -->
+                                <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="questionTwo">
+                                <h5 class="panel-title">
+                                <h5 class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerTwo" aria-expanded="false" aria-controls="answerTwo">
+                               Demographic Information</h5>
+                                </h5>
+                                </div>
+                                <div id="answerTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="questionTwo">
+                                <div class="panel-body">
+                              <fieldset>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="nationalId">{{ __('National Id') }}</label>
@@ -333,8 +347,22 @@
 
                                 </div>
                             </fieldset>
-                            <!-- contact Info -->
-                            <div class="border-top my-3"></div>
+                                </div>
+                                </div>
+                                </div>
+                    <div class="border-top my-3"></div>
+                            
+<!-- contact Info -->
+                            <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="questionThree">
+                            <h5 class="panel-title">
+                            <h5 class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerThree" aria-expanded="true" aria-controls="answerThree">
+                            Contact Information
+                            </h5>
+                            </h5>
+                            </div>
+                            <div id="answerThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="questionThree">
+                            <div class="panel-body">
                             <fieldset>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
@@ -365,36 +393,56 @@
                                     </div>
                                 </div>
                             </fieldset>
-                            <!-- Demographic Info -->
-                            <div class="border-top my-3"></div>
-                            <fieldset>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="majorField">{{ __('Major Field') }}</label>
-                                        <input id="majorField" class="form-control" type="text" name="majorField" value="{{ old('major_field') }}">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="subspecialtyField">{{ __('Subspecialty Field') }}</label>
-                                        <input id="subspecialtyField" class="form-control" type="text" name="subspecialtyField" value="{{ old('subspecialty_field') }}">
-                                    </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="degreeName">{{ __('Degree Name') }}</label>
-                                        <input id="degreeName" type="text" class="form-control" name="degreeName" value="{{ old('degree_name') }}">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="graduateInstitution">{{ __('Graduate Institution') }}</label>
-                                        <input id="graduateInstitution" class="form-control" type="text" name="graduateInstitution" placeholder="King Saud bin Abdulaziz for Heath Sciences" value="{{ old('ngha_email') }}">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="year">{{ __('Graduated Year') }}</label>
-                                        <input id="year" class="form-control" type="number" name="year" placeholder="2012" value="{{ old('year') }}">
-                                    </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">ADD</button>
+                                </div>
 
-                            </fieldset>
+                                                    <div class="border-top my-3"></div>         
+                                <!-- educational Info -->
+                                <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="questionFour">
+                                <h5 class="panel-title">
+                                <h5 class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerFour" aria-expanded="false" aria-controls="answerFour">
+                                Educational Information
+                                </h5>
+                                </h5>
+                                </div>
+                                <div id="answerFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="questionFour">
+                                <div class="panel-body">
+                                                        
+                                                            <fieldset>
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-6">
+                                                                        <label for="majorField">{{ __('Major Field') }}</label>
+                                                                        <input id="majorField" class="form-control" type="text" name="majorField" value="{{ old('major_field') }}">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label for="subspecialtyField">{{ __('Subspecialty Field') }}</label>
+                                                                        <input id="subspecialtyField" class="form-control" type="text" name="subspecialtyField" value="{{ old('subspecialty_field') }}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="degreeName">{{ __('Degree Name') }}</label>
+                                                                        <input id="degreeName" type="text" class="form-control" name="degreeName" value="{{ old('degree_name') }}">
+                                                                    </div>
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="graduateInstitution">{{ __('Graduate Institution') }}</label>
+                                                                        <input id="graduateInstitution" class="form-control" type="text" name="graduateInstitution" placeholder="King Saud bin Abdulaziz for Heath Sciences" value="{{ old('ngha_email') }}">
+                                                                    </div>
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="year">{{ __('Graduated Year') }}</label>
+                                                                        <input id="year" class="form-control" type="number" name="year" placeholder="2012" value="{{ old('year') }}">
+                                                                    </div>
+                                                                </div>
+                                                               
+
+                                                            </fieldset>
+
+                                </div>
+                                </div>
+                                </div>
+ <button type="submit" class="btn btn-primary">ADD</button>
 
                         </form>
                 </div>
