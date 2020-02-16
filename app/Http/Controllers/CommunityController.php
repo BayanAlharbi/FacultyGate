@@ -64,7 +64,8 @@ class CommunityController extends Controller
     {
         //
         $community = Community::findOrfail($id);
-        return view('community.show', compact('community'));
+        $faculties = Faculty::get();
+        return view('community.show', compact('community', 'faculties'));
     }
 
     /**
@@ -77,7 +78,8 @@ class CommunityController extends Controller
     {
         //
         $community = Community::find($id);
-        return view('community.edit', compact('community'));
+        $faculties = Faculty::get();
+        return view('community.edit', compact('community', 'faculties'));
     }
 
     /**
@@ -108,7 +110,7 @@ class CommunityController extends Controller
      * @param  \App\Community  $community
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Community $community)
+    public function destroy($id)
     {
         //
         $community = Community::findOrfail($id);

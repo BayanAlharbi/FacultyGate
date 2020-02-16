@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
 
+
         <div class="col-md-8">
             <div class="card">
                 <!-- @if(session()->get('success'))
@@ -11,6 +12,18 @@
                     {{ session()->get('success') }}
                 </div><br />
                 @endif -->
+                <!-- <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/faculty/show">Faculty Basic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li> </ul>-->
+
+
                 <div class="card-body">
                     <div class="card-header">{{ __('Faculty Information') }}</div>
                     <dl class="row">

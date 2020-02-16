@@ -25,16 +25,23 @@
         <!--  event_name,event_date, target_audience,participated_students,participated_faculties -->
         <tbody>
             @foreach($communities as $community)
-            <td>
+            <!-- <td>
                 @if($community->faculty_id != NULL)
                 {{$community->Faculty->english_name}}
-                @endif
+                @endif -->
+
+            <td><a href="{{ route('community.show',$community->id)}}" title="{{ $community->Faculty->english_name}}">
+                    @if($community->faculty_id != NULL)
+                    {{$community->Faculty->english_name}}
+                    @endif</a></td>
             </td>
+
             <td>{{$community->event_name}}</td>
             <td>{{$community->event_date}}</td>
             <td>{{$community->target_audience}}</td>
             <td>{{$community->participated_students}}</td>
             <td>{{$community->participated_faculties}}</td>
+            <td><a href="{{ route('community.edit',$community->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
                 <form onsubmit="return confirm('Do you really want to delete?');" action="{{ route('community.destroy', $community->id)}}" method="post">
                     @csrf
