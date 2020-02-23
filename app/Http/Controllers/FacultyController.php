@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Community;
 use App\Faculty;
 use App\ContactInfo;
 use App\DemographicInfo;
 use CreateContactInfoTable;
 use App\EducationalBackground;
 use App\FullTime;
+use App\Research;
 use Illuminate\Http\Request;
 use Illuminate\Http\Input;
 
@@ -52,7 +54,11 @@ class FacultyController extends Controller
         $faculty->academic_rank = $request->academicRank;
         $faculty->admin_position = $request->adminPosition;
         $faculty->status = $request->status;
-        $faculty->full_time = $request->fullTime;
+        if ($request->fullTime == null) {
+            $faculty->full_time = 0;
+        } else {
+            $faculty->full_time = $request->fullTime;
+        }
         $faculty->joining_date = $request->joiningDate;
         $faculty->promotion_date = $request->promotionDate;
         $faculty->save();
@@ -76,16 +82,17 @@ class FacultyController extends Controller
         $contact->personal_email = $request->personalEmail;
         $contact->save();
 
-
-        $fulltime = new FullTime();
-        $fulltime->faculty_id = $faculty->id;
-        $fulltime->yearly_appraisal = $request->yearlyAppraisal;
-        $fulltime->business_leave = $request->businessLeave;
-        $fulltime->administrative_duties = $request->administrativeDuties;
-        $fulltime->number_of_invigilator = $request->numberOfInvigilator;
-        $fulltime->total_invigilator_hour = $request->totalInvigilatorHour;
-        $fulltime->committee_membership = $request->committeeMembership;
-        $fulltime->save();
+        if ($request->fullTime == 1) {
+            $fulltime = new FullTime();
+            $fulltime->faculty_id = $faculty->id;
+            $fulltime->yearly_appraisal = $request->yearlyAppraisal;
+            $fulltime->business_leave = $request->businessLeave;
+            $fulltime->administrative_duties = $request->administrativeDuties;
+            $fulltime->number_of_invigilator = $request->numberOfInvigilator;
+            $fulltime->total_invigilator_hour = $request->totalInvigilatorHour;
+            $fulltime->committee_membership = $request->committeeMembership;
+            $fulltime->save();
+        }
 
         $education = new EducationalBackground();
         $education->faculty_id = $faculty->id;
@@ -109,8 +116,9 @@ class FacultyController extends Controller
     {
         //
         $faculty =  Faculty::findOrfail($id);
-        // return $faculty->EducationalBackground;
-        return view('faculty.show', compact('faculty'));
+        $communities = Community::where('faculty_id', '=', $id)->get();
+        $researches = Research::where('faculty_id', '=', $id)->get();
+        return view('faculty.show', compact('faculty', 'communities', 'researches'));
     }
 
     /**
@@ -185,7 +193,9 @@ class FacultyController extends Controller
     {
         //
         $faculty = Faculty::findOrfail($id);
-        $faculty->destroy($id);
+        $faculty->delete($id);
+        $communities = Community::where('faculty_id', '=', $id)->delete();
+        $researches = Research::where('faculty_id', '=', $id)->delete();
         return redirect('/faculty')->with('success', 'faculty has been deleted');
     }
 }

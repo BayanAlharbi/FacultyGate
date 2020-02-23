@@ -46,6 +46,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('community.store') }}">{{ __('community') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('research.store') }}">{{ __('Research') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -92,6 +95,10 @@
                 @elseif(session()->get('warning'))
                 <div class="alert alert-warning">
                     {{ session()->get('warning') }}
+                </div>
+                @elseif(session()->get('errors'))
+                <div class="alert alert-warning">
+                    {{ session()->get('errors') }}
                 </div>
                 @endif
             </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommunitiesTable extends Migration
+class CreateResearchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateCommunitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('communities', function (Blueprint $table) {
+        Schema::create('researches', function (Blueprint $table) {
             $table->bigIncrements('id')->autoIncrement();
             $table->integer('faculty_id')->unsigned()->index();
-            $table->string('event_name');
-            $table->date('event_date');
-            $table->string('target_audience');
-            $table->integer('participated_students');
-            $table->integer('participated_faculties');
+            $table->integer('pbl');
+            $table->integer('research_proposal_supervised');
+            $table->integer('research_proposal_cosupervised');
+            $table->integer('irb_approval');
+            $table->integer('research_presentation');
+            $table->integer('publication');
+            $table->integer('student_involvement');
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
@@ -34,6 +36,6 @@ class CreateCommunitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('communities');
+        Schema::dropIfExists('researches');
     }
 }

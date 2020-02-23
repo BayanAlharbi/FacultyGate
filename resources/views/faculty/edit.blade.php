@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <div class="card">
 
-                <div class="card-header">{{ __('Faculty Member') }}</div>
+                <div class="card-header">{{ Faculty Member }}</div>
 
                 <div class="card-body">
                     <form method="post" action="{{ route('faculty.update', $faculty->id) }}">
@@ -17,29 +17,29 @@
                         <fieldset>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="englishName">{{ ('English Name:') }}</label>
+                                    <label for="englishName">{{ English Name:}}</label>
                                     <input type="text" class="form-control" name="englishName" value="{{ $faculty->english_name }}" />
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="arabicName">{{ ('Arabic Name:') }}</label>
+                                    <label for="arabicName">{{Arabic Name:}}</label>
                                     <input type="text" class="form-control" name="arabicName" value="{{ $faculty->arabic_name }}" />
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-3">
-                                    <label for="badge">{{ ('Badge') }}</label>
+                                    <label for="badge">{{Badge}}</label>
                                     <input id="badge" class="form-control" type="text" name="badge" value="{{ $faculty->badge }}">
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="academicRank">{{ __('Academic Rank') }}</label>
+                                    <label for="academicRank">{{ Academic Rank}}</label>
                                     <input type="text" class="form-control" name="academicRank" value="{{ $faculty->academic_rank }}" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="adminPosition">{{ __('Admin Position') }}</label>
+                                    <label for="adminPosition">{{ Admin Position }}</label>
                                     <input type="text" class="form-control" name="adminPosition" value="{{ $faculty->admin_position }}" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="status">{{ __('Status') }}</label>
+                                    <label for="status">{{ Status }}</label>
                                     <select class="form-inline" class="btn-primary dropdown-toggle" name="status" class="js-example-basic-multiple">
                                         <option class="dropdown-item" value="active" {{ $faculty->status  == 'active' ? 'selected' : '' }}>Active</option>
                                         <option class="dropdown-item" value="retried" {{ $faculty->status  == 'retried' ? 'selected' : '' }}>Retried</option>
@@ -50,15 +50,15 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-3">
-                                    <label for="joiningDate">{{ __('Joining Date') }}</label>
+                                    <label for="joiningDate">{{Joining Date}}</label>
                                     <input type="date" class="form-control" name="joiningDate" value="{{ $faculty->joining_date }}" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="promotionDate">{{ __('Promotion Date') }}</label>
+                                    <label for="promotionDate">{{ Promotion Date }}</label>
                                     <input type="date" class="form-control" name="promotionDate" value="{{ $faculty->promotion_date }}" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="lastWorkingDate">{{ __('Last Working Date') }}</label>
+                                    <label for="lastWorkingDate">{{Last Working Date}}</label>
                                     <input type="date" class="form-control" name="lastWorkingDate" value="{{ $faculty->last_working_date }}" />
                                 </div>
                                 <div class="form-group col-md-3">
@@ -76,29 +76,29 @@
                         <fieldset>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="yearlyAppraisal">{{ __('Yearly Appraisal') }}</label>
+                                    <label for="yearlyAppraisal">{{Yearly Appraisal}}</label>
                                     <input type="number" class="form-control" name="yearlyAppraisal" value="{!!$faculty->FullTime->yearly_appraisal !!}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="businessLeave">{{ __('Prof. and Business Leave Attend') }}</label>
+                                    <label for="businessLeave">{{Prof. and Business Leave Attend}}</label>
                                     <input type="number" class="form-control" name="businessLeave" value="{!!$faculty->FullTime->business_leave !!}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="administrativeDuties">{{ __('Administrative Duties') }}</label>
+                                    <label for="administrativeDuties">{{ Administrative Duties }}</label>
                                     <input type="text" class="form-control" name="administrativeDuties" value="{!!$faculty->FullTime->administrative_duties !!}" />
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="numberOfInvigilator">{{ __('Number Of Invigilator') }}</label>
+                                    <label for="numberOfInvigilator">{{ Number Of Invigilator}}</label>
                                     <input type="number" class="form-control" name="numberOfInvigilator" value="{!!$faculty->FullTime->number_of_invigilator !!}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="totalInvigilatorHour">{{ __('Total Invigilator Hour') }}</label>
+                                    <label for="totalInvigilatorHour">{{ Total Invigilator Hour}}</label>
                                     <input type="number" class="form-control" name="totalInvigilatorHour" value="{!!$faculty->FullTime->total_invigilator_hour !!}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="committeeMembership">{{ __('Committee Membership') }}</label>
+                                    <label for="committeeMembership">{{Committee Membership}}</label>
                                     <input type="text" class="form-control" name="committeeMembership" value="{!!$faculty->FullTime->committee_membership !!}" />
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                         <fieldset>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="nationality">{{ __('Nationality') }}</label> <br>
+                                    <label for="nationality">{{Nationality }}</label> <br>
                                     <!-- <input id="nationality" class="form-control" type="text" name="nationality" value="{{ old('nationality') }}"> -->
                                     <select value="selected" selected name="nationality" class="js-example-basic-multiple">
                                         <option value="american" {{ $faculty->DemographicInfo->nationality == 'american' ? 'selected' : '' }}>American</option>
@@ -189,7 +189,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="maritalStatus">{{ __('Marital Status') }}</label> <br>
+                                    <label for="maritalStatus">{{ Marital Status}}</label> <br>
                                     <!-- <input id="nationality" class="form-control" type="text" name="nationality" value="{{ old('nationality') }}"> -->
                                     <select value="selected" name="maritalStatus" class="js-example-basic-multiple">
                                         <option value="married" {{ $faculty->DemographicInfo->marital_status  == 'married' ? 'selected' : '' }}>married</option>
@@ -199,18 +199,18 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label value="checked" for="gender">{{ __('Gender') }}</label> <br>
+                                    <label value="checked" for="gender">{{Gender}}</label> <br>
                                     <input type="radio" name="gender" value="Male" {{ $faculty->DemographicInfo->gender == 'Male' ? 'checked' : '' }}>Male
                                     <input type="radio" name="gender" value="Female" {{ $faculty->DemographicInfo->gender == 'Female' ? 'checked' : ''}}> Female
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="nationalId">{{ __('National Id') }}</label>
+                                    <label for="nationalId">{{ National Id}}</label>
                                     <input id="nationalId" class="form-control" type="text" name="nationalId" placeholder="1111111111" value="{!!$faculty->DemographicInfo->national_id !!}">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="dateOfBirth">{{ __('Date of Birth') }}</label>
+                                    <label for="dateOfBirth">{{ Date of Birth}}</label>
                                     <input id="dateOfBirth" class="form-control" type="date" name="dateOfBirth" placeholder="dd/mm/yyyy" value="{!!$faculty->DemographicInfo->date_of_birth !!}">
                                 </div>
 
@@ -221,29 +221,29 @@
                         <fieldset>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="cellPhone">{{ __('Cell Phone') }}</label>
+                                    <label for="cellPhone">{{ Cell Phone }}</label>
                                     <input type="number" class="form-control" name="cellPhone" value="{!!$faculty->ContactInfo->cell_phone !!}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="pagerNumber">{{ __('Pager Number') }}</label>
+                                    <label for="pagerNumber">{{Pager Number}}</label>
                                     <input type="number" class="form-control" name="pagerNumber" value="{{ $faculty->ContactInfo->pager_number }}">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="extension">{{ __('extension') }}</label>
+                                    <label for="extension">{{Extension}}</label>
                                     <input type="number" class="form-control" name="extension" value="{{ $faculty->ContactInfo->extension }}" />
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="ngha_email">{{ __('NGHA Email') }}</label>
+                                    <label for="ngha_email">{{NGHA Email }}</label>
                                     <input type="email" class="form-control" name="nghaEmail" value="{{ $faculty->ContactInfo->ngha_email }}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="ksauhs_email">{{ __('KSAU-HS Email') }}</label>
+                                    <label for="ksauhs_email">{{KSAU-HS Email }}</label>
                                     <input type="email" class="form-control" name="ksauhsEmail" value="{{ $faculty->ContactInfo->ksauhs_email }}" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="personal_email">{{ __('Personal Email') }}</label>
+                                    <label for="personal_email">{{Personal Email}}</label>
                                     <input type="email" class="form-control" name="personalEmail" value="{{ $faculty->ContactInfo->personal_email }}" />
                                 </div>
                             </div>
@@ -253,25 +253,25 @@
                             @foreach($faculty->EducationalBackground as $edu)
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="majorField">{{ __('Major Field') }}</label>
+                                    <label for="majorField">{{ Major Field }}</label>
                                     <input id="majorField" class="form-control" type="text" name="majorField" value="{{ $edu->major_field }}">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="subspecialtyField">{{ __('Subspecialty Field') }}</label>
+                                    <label for="subspecialtyField">{{ Subspecialty Field}}</label>
                                     <input id="subspecialtyField" class="form-control" type="text" name="subspecialtyField" value="{{ $edu->subspecialty_field}}">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="subspecialtyField">{{ __('Degree Name') }}</label>
+                                    <label for="subspecialtyField">{{ Degree Name }}</label>
                                     <input id="subspecialtyField" class="form-control" type="text" name="subspecialtyField" value="{{ $edu->degree_name }}">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="graduateInstitution">{{ __('Graduated Institution') }}</label>
+                                    <label for="graduateInstitution">{{Graduated Institution }}</label>
                                     <input id="graduateInstitution" class="form-control" type="text" name="graduateInstitution" value="{{ $edu->graduate_institution }}">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="year">{{ __('Graduated Year') }}</label>
+                                    <label for="year">{{ Graduated Year}}</label>
                                     <input id="year" class="form-control" type="number" name="year" value="{{  $edu->year }}">
                                 </div>
                             </div>
@@ -280,7 +280,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Update') }}
+                                    {{Update}}
                                 </button>
                             </div>
                         </div>

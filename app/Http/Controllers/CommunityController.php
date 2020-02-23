@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Community;
 use App\Faculty;
+use App\Research;
 use Illuminate\Http\Request;
+use App\Http\Requests\CommunityRequest;
 
 class CommunityController extends Controller
 {
@@ -38,20 +40,25 @@ class CommunityController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CommunityRequest $request)
     {
-        //   <!-- event_name,event_date, target_audience,participated_students,participated_faculties-->
-        $community = new Community();
-        $community->event_name = $request->eventName;
-        $community->event_date = $request->eventDate;
-        $community->target_audience = $request->targetAudience;
-        $community->participated_students = $request->participatedStudents;
-        $community->participated_faculties = $request->participatedFaculties;
-        $community->faculty_id = $request->faculty_id;
-        // return $request;
-        $community->save();
+        //   will return only validated date
+        // $validated = $request->validated();
+        //  Community::create($request->all());
+        // $community = new Community();
+        // $community->event_name = $request->eventName;
+        // $community->event_date = $request->eventDate;
+        // $community->target_audience = $request->targetAudience;
+        // $community->participated_students = $request->participatedStudents;
+        // $community->participated_faculties = $request->participatedFaculties;
+        // $community->faculty_id = $request->faculty_id;
+        // $community->save();
+        //$validated = $request->validated();
+        // return redirect('/community')->with('success', 'community activity has been added!');
 
-        return redirect('/community')->with('success', 'community activity has been added');
+        $create = Community::create($request->all());
+        $success = $create ? $request->session()->flash('success', 'community activity has been added!') : $request->session()->flash('errors', 'Oops! :(');
+        return redirect('/community')->with($success);
     }
 
     /**
@@ -63,9 +70,9 @@ class CommunityController extends Controller
     public function show($id)
     {
         //
-        $community = Community::findOrfail($id);
-        $faculties = Faculty::get();
-        return view('community.show', compact('community', 'faculties'));
+        $researches = Research::where('faculty_id', '=', $id)->get();
+        $community = Community::find($id);
+        return view('community.show', compact('community', 'researches'));
     }
 
     /**
@@ -89,18 +96,10 @@ class CommunityController extends Controller
      * @param  \App\Community  $community
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         // 
-        $community = Community::find($id);
-        $community->faculty_id = $request->facultyId;
-        $community->event_name = $request->eventName;
-        $community->event_date = $request->eventDate;
-        $community->target_audience = $request->targetAudience;
-        $community->participated_students = $request->participatedStudents;
-        $community->participated_faculties = $request->participatedFaculties;
-        $community->save();
-
+        $request->update($request->all());
         return redirect('/community')->with('success', 'community activity has been updated');
     }
 

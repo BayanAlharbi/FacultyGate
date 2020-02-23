@@ -28,26 +28,26 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="eventName">{{ ('Event Name') }}</label>
-                                        <input id="eventName" class="form-control" type="text" name="eventName" placeholder="event name" required autocomplete="name" autofocus>
+                                        <label for="event_name">{{ ('Event Name') }}</label>
+                                        <input id="event-name" class="form-control" type="text" name="event_name" placeholder="event name" required autocomplete="name" autofocus>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="eventDate">{{ ('Event Date') }}</label>
-                                        <input id="eventDate" class="form-control" type="date" name="eventDate" required autofocus>
+                                        <label for="event-date">{{ ('Event Date') }}</label>
+                                        <input id="event-date" class="form-control" type="date" name="event_date" required autofocus>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
-                                        <label for="targetAudience">{{ ('Target Audience') }}</label>
-                                        <input class="form-inline" id="targetAudience" class="form-control" type="text" name="targetAudience" value="{{ old('target_audience') }}">
+                                        <label for="target-audience">{{ ('Target Audience') }}</label>
+                                        <input class="form-inline" id="target-audience" class="form-control" type="text" name="target_audience" value="{{ old('target_audience') }}">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="participatedStudents">{{ __('Number of Participated Students') }}</label>
-                                        <input class="form-inline" id="participatedStudents" class="form-control" type="text" name="participatedStudents" value="{{ old('participated_students') }}">
+                                        <label for="participated-students">{{ __('Number of Participated Students') }}</label>
+                                        <input class="form-inline" id="participated-students" class="form-control" type="text" name="participated_students" value="{{ old('participated_students') }}">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="participatedFaculties">{{ __('Number of Participated Faculties') }}</label>
-                                        <input class="form-inline" id="participatedFaculties" type="text" class="form-control" name="participatedFaculties" value="{{ old('participated_faculties') }}">
+                                        <label for="participated-faculties">{{ __('Number of Participated Faculties') }}</label>
+                                        <input class="form-inline" id="participated-faculties" type="text" class="form-control" name="participated_faculties" value="{{ old('participated_faculties') }}">
                                     </div>
                                 </div>
 

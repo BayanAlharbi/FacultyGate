@@ -10,6 +10,10 @@ class Faculty extends Model
     //
     use SoftDeletes;
 
+    protected $attributes = [
+        'full_time' => '0'
+    ];
+
     public function ContactInfo()
     {
         return $this->hasOne('App\ContactInfo', 'faculty_id', 'id');
@@ -29,5 +33,9 @@ class Faculty extends Model
     public function Community()
     {
         return $this->hasMany('App\Community', 'faculty_id', 'id');
+    }
+    public function Research()
+    {
+        return $this->hasMany('App\Research', 'faculty_id', 'id');
     }
 }

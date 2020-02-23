@@ -28,7 +28,7 @@ class AddStatusToTable extends Migration
     {
         Schema::table('faculties', function (Blueprint $table) {
             //
-            $table->string('status')->after('admin_position');
+            $table->dropColumn('status');
         });
     }
 }

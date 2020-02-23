@@ -15,7 +15,7 @@ class AddFullTimeToTable extends Migration
     {
         Schema::table('faculties', function (Blueprint $table) {
             //
-            $table->boolean('full_time')->after('status');
+            $table->boolean('full_time')->after('status')->default(0)->change();
         });
     }
 

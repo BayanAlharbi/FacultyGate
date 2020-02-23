@@ -21,8 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 Route::resource('faculty', 'FacultyController');
+Route::get('faculty/{faculty}', 'FacultyController@show')->name('faculty.show');
 Route::resource('community', 'CommunityController');
-// Route::post('faculty', 'FacultyController');
+Route::get('community/{community}', 'CommunityController@show')->name('community.show');
+Route::resource('research', 'ResearchController');
+Route::get('research/{research}', 'ResearchController@show')->name('research.show');
 Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/faculty', 'FacultyController@index');
 // Route::post('faculty/create', 'FacultyController@store')->name('faculty.create');
