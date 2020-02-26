@@ -41,13 +41,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('faculty.store') }}">{{ __('faculty') }}</a>
+                            <a class="nav-link" href="{{ route('faculty.store') }}">{{('Faculty') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('community.store') }}">{{ __('community') }}</a>
+                            <a class="nav-link" href="{{ route('community.store') }}">{{('Community') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('research.store') }}">{{ __('Research') }}</a>
+                            <a class="nav-link" href="{{ route('research.store') }}">{{ ('Research') }}</a>
                         </li>
                     </ul>
 
@@ -56,11 +56,11 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ ('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ ('Register') }}</a>
                         </li>
                         @endif
                         @else
@@ -72,7 +72,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ ('Logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

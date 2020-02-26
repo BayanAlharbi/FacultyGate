@@ -5,14 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <ul class="nav nav-tabs profile-tab" role="tablist">
-                    <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="#facultyInfo" role="tab">Faculty Basic</a> </li>
-                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#community" role="tab">Community Activity</a></li>
-                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#research" role="tab">Researches</a> </li>
-                </ul>
-                <div class="tab-content">
-                    <!-- RESEARCHES -->
-                    <div class="tab-pane active" id="research" role="tabpanel">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link" id="nav-faculty-tab" data-toggle="tab" href="#nav-faculty" role="tab" aria-controls="nav-faculty" aria-selected="false">Faculty</a>
+                        <a class="nav-item nav-link" id="nav-community-tab" data-toggle="tab" href="#nav-community" role="tab" aria-controls="nav-community" aria-selected="false">Community</a>
+                        <a class="nav-item nav-link active" id="nav-research-tab" data-toggle="tab" href="#nav-research" role="tab" aria-controls="nav-research" aria-selected="true">Researches</a>
+                    </div>
+                </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-research" role="tabpanel" aria-labelledby="nav-research-tab">
                         <div class=" card-body">
                             @if(empty($research))
                             No Research for this faculty
@@ -37,9 +39,8 @@
                             @endif
                         </div>
                     </div>
-
-                    <!-- COMMUNITY -->
-                    <div class="tab-pane active" id="community" role="tabpanel">
+                    <!-- community -->
+                    <div class="tab-pane fade" id="nav-community" role="tabpanel" aria-labelledby="nav-community-tab">
                         <div class=" card-body">
                             @if($communities->isEmpty())
                             <h6 class="card-subtitle mb-2 text-muted">No Community Activity Found</h6>
@@ -63,7 +64,7 @@
                         </div>
                     </div>
                     <!-- Faculty Info -->
-                    <div class="tab-pane active" id="facultyInfo" role="tabpanel">
+                    <div class="tab-pane fade" id="nav-faculty" role="tabpanel" aria-labelledby="nav-faculty-tab">
                         <div class=" card-body">
                             <h5 class="card-title">{{( 'Faculty Information' )}}</h5>
                             <dl class="row">
@@ -79,7 +80,6 @@
                                 <dd class="col-sm-6"> {{$research->Faculty->admin_position }}</dd>
                                 <dt class="col-sm-4">Status:</dt>
                                 <dd class="col-sm-6"> {{$research->Faculty->status }}</dd>
-
                             </dl>
                         </div>
                     </div>
@@ -90,9 +90,3 @@
     </div>
 </div>
 @endsection
-<script>
-    $('#profile-tab a').on('click', function(e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-</script>
