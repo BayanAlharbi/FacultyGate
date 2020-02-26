@@ -16,13 +16,13 @@
                         <fieldset>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="exampleFormControlSelect1">Faculty Name</label>
-                                    <select required class="form-control" name="facultyId">
+                                    <label for="exampleFormControlSelect1">{{('Faculty Name')}}</label>
+                                    <select required class="form-control" name="faculty_id">
                                         @foreach ($faculties as $faculty )
-                                        @if ($research->faculty_id == $faculty->id)
-                                        <option selected value=" {{$faculty->id}}"> {{ $research->Faculty->english_name }}</option>
+                                        @if($faculty->english_name == $research->Faculty->english_name)
+                                        <option value="{{$faculty->id}}" selected>{{ $faculty->english_name }}</option>
                                         @else
-                                        <option value="{{$faculty->id}}"> {{ $research->Faculty->english_name }}</option>
+                                        <option value="{{$faculty->id}}">{{ $faculty->english_name }}</option>
                                         @endif
                                         @endforeach
                                     </select>

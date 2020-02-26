@@ -6,6 +6,7 @@ use App\Research;
 use App\Faculty;
 use App\Community;
 use Illuminate\Http\Request;
+use App\Http\Requests\ResearchRequest;
 
 class ResearchController extends Controller
 {
@@ -40,7 +41,7 @@ class ResearchController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ResearchRequest $request)
     {
         //
         $create = Research::create($request->all());
@@ -74,7 +75,7 @@ class ResearchController extends Controller
     {
         //
         $research = Research::find($id);
-        $faculties = Faculty::get();
+        $faculties = Faculty::select('id', 'english_name')->get();
 
         return view('research.edit', compact('research', 'faculties'));
     }
@@ -87,21 +88,11 @@ class ResearchController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $request, $id)
+    public function update(ResearchRequest $request, $id)
     {
-        //
-        $research = Research::find($id);
-        $research->faculty_id = $request->facultyId;
-        $research->pbl = $request->pbl;
-        $research->research_proposal_supervised = $request->research_proposal_supervised;
-        $research->research_proposal_cosupervised = $request->research_proposal_cosupervised;
-        $research->irb_approval = $request->irb_approval;
-        $research->research_presentation = $request->research_presentation;
-        $research->publication = $request->publication;
-        $research->student_involvement = $request->student_involvement;
-        $research->save();
 
-
+        $request = $request->except(['_token', '_method']);
+        Research::where('id', $id)->update($request);
         return redirect('/research')->with('success', 'research has been updated');
     }
 

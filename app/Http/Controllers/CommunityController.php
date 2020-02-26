@@ -7,6 +7,7 @@ use App\Faculty;
 use App\Research;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommunityRequest;
+use App\Http\Controllers\array_except;
 
 class CommunityController extends Controller
 {
@@ -42,20 +43,6 @@ class CommunityController extends Controller
      */
     public function store(CommunityRequest $request)
     {
-        //   will return only validated date
-        // $validated = $request->validated();
-        //  Community::create($request->all());
-        // $community = new Community();
-        // $community->event_name = $request->eventName;
-        // $community->event_date = $request->eventDate;
-        // $community->target_audience = $request->targetAudience;
-        // $community->participated_students = $request->participatedStudents;
-        // $community->participated_faculties = $request->participatedFaculties;
-        // $community->faculty_id = $request->faculty_id;
-        // $community->save();
-        //$validated = $request->validated();
-        // return redirect('/community')->with('success', 'community activity has been added!');
-
         $create = Community::create($request->all());
         $success = $create ? $request->session()->flash('success', 'community activity has been added!') : $request->session()->flash('errors', 'Oops! :(');
         return redirect('/community')->with($success);
@@ -85,7 +72,8 @@ class CommunityController extends Controller
     {
         //
         $community = Community::find($id);
-        $faculties = Faculty::get();
+        $faculties = Faculty::select('id', 'english_name')->get();
+        //return $faculties;
         return view('community.edit', compact('community', 'faculties'));
     }
 
@@ -96,10 +84,11 @@ class CommunityController extends Controller
      * @param  \App\Community  $community
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(CommunityRequest $request, $id)
     {
-        // 
-        $request->update($request->all());
+        //
+        $request = $request->except(['_token', '_method']);
+        Community::where('id', $id)->update($request);
         return redirect('/community')->with('success', 'community activity has been updated');
     }
 
