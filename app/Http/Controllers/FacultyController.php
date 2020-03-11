@@ -23,7 +23,7 @@ class FacultyController extends Controller
     public function index()
     {
         //
-        $faculties = Faculty::all();
+        $faculties = Faculty::simplePaginate(10);
         return view('faculty.index', compact('faculties'));
     }
 

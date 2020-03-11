@@ -19,7 +19,7 @@ class CommunityController extends Controller
     public function index()
     {
         //
-        $communities = Community::paginate(10);
+        $communities = Community::simplePaginate(10);
         return view('community.index', compact('communities'));
     }
 

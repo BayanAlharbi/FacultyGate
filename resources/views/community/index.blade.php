@@ -57,6 +57,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $communities->links() }}
         </div>
     </div>
 </div>

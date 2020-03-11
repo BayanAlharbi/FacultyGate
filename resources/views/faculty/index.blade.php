@@ -46,6 +46,8 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $faculties->links() }}
+
         </div>
     </div>
 </div>
