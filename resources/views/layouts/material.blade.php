@@ -14,6 +14,7 @@
     <!-- This page css -->
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('material-pro/src/assets/extra-libs/css-chart/css-chart.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/css/bootstrap.css')}}">
     <link href="{{asset('material-pro/dist/css/style.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('highlights/highlight.min.css')}}">
     <!-- <link href="{{ asset('assets/plugins/footable/css/footable.bootstrap.min.css') }}" rel="stylesheet"> -->
@@ -139,7 +140,6 @@
                                 <span class="hide-menu">Research</span></a>
                         </li>
                         <li class="list-divider"></li>
-
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -184,20 +184,26 @@
                     </div> -->
                     <div class="row justify-content-center bg-light p-5">
                         <div class="col-md-7">
+                            @if(session('errors'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('errors') }}
+                            </div>
+                            @endif
+                            @if(session()->get('success'))
+                            <div class="alert alert-success">
+                                {{ session()->get('success') }}
+                            </div>
+                            @endif
                             <div class="card shadow-sm">
                                 <div class="p-4">
                                     <h5>@yield('title')</h5>
                                     <h4 class="card-title">@yield('sub-title')</h4>
                                     <!-- <div class="card mb-0 bg-light mt-3"> -->
                                     <div class="card-body">
-
                                         @yield('content')
-
-
                                     </div>
                                     <!-- </div> -->
                                 </div>
-
                             </div>
                         </div>
                     </div>
