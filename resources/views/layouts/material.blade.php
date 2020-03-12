@@ -15,7 +15,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('material-pro/src/assets/extra-libs/css-chart/css-chart.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/css/bootstrap.css')}}">
-    <link href="{{asset('material-pro/dist/css/style.min.css')}}" rel="stylesheet">
+    <link href="{{asset('material-pro/dist/css/style.min.css')}}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('highlights/highlight.min.css')}}">
     <!-- <link href="{{ asset('assets/plugins/footable/css/footable.bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('assets/plugins/footable/css/footable.core.css') }}" rel="stylesheet">

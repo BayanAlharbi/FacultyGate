@@ -77,7 +77,7 @@
                     <hr>
                     @endif
                     <!-- demographic Info -->
-
+                    @isset($faculty->DemographicInfo->nationality)
                     <h5 class="card-title">{{ __('Demographic Information') }}</h5>
                     <dl class="row">
                         <dt class="col-sm-4">Nationality:</dt>
@@ -92,8 +92,9 @@
                         <dd class="col-sm-6"> {{$faculty->DemographicInfo->date_of_birth }}</dd>
                     </dl>
                     <hr>
+                    @endisset
                     <!-- contact info -->
-
+                    @isset($faculty->ContactInfo->cell_phone)
                     <h5 class="card-title">{{ __('Contact Information') }}</h5>
                     <dl class="row">
                         <div class="border-top my-4"></div>
@@ -111,8 +112,9 @@
                         <dd class="col-sm-6"> {{$faculty->ContactInfo->personal_email }}</dd>
                     </dl>
                     <hr>
+                    @endisset
                     <!-- EDUCATIONAL BACKGROUND -->
-
+                    @isset($faculty->EducationalBackground->major_field)
                     <h5 class="card-title">{{ __('Educational Background') }}</h5>
                     <dl class="row">
                         @foreach($faculty->EducationalBackground as $edu)
@@ -130,7 +132,7 @@
                         <hr>
                         @endforeach
                     </dl>
-
+                    @endisset
                 </div>
                 <div class="tab-pane" id="community">
                     <div class=" card-body">
